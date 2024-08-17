@@ -1,1 +1,1 @@
-export * from './Heart.tsx'
+export * from './Heart.tsx';

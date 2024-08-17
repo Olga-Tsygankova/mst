@@ -6,7 +6,6 @@ import { Heart } from './Heart';
 // import ScrollMagic from 'scrollmagic';
 
 export const HeartSection = () => {
-
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>

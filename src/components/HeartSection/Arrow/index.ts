@@ -1,1 +1,1 @@
-export * from './Arrow.tsx'
+export * from './Arrow.tsx';
