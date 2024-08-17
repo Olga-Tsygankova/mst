@@ -1,0 +1,110 @@
+.wrapper {
+  margin-top: 131px;
+  font-size: 12px;
+}
+
+.container {
+  display: flex;
+}
+
+.leftText {
+  display: flex;
+  flex-direction: column;
+  gap: 248px;
+
+  width: 148px;
+}
+
+.rightText {
+  display: flex;
+  flex-direction: column;
+  gap: 248px;
+
+  width: 148px;
+
+  margin-top: 168px;
+}
+
+.arrowLine {
+  display: flex;
+  justify-content: center;
+
+  position: relative;
+
+}
+
+.arrowLine svg {
+  height: 900px;
+}
+
+.heart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: relative;
+  bottom: 70px;
+  right: 5px;
+}
+
+.heart svg {
+  width: 274px;
+  animation: heartbeat 3s infinite;
+}
+
+.btn {
+  font-size: 17px;
+
+  border: 1px solid #F5F1EE;
+  border-radius: 65.14px;
+
+  padding: 20px 55px;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/*                                  ANIMATION                                           */
+/*---------------------------------------------------------------------------------------------*/
+@keyframes heartbeat {
+  0% {
+    transform: scale(.75);
+  }
+  20% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(.75);
+  }
+  60% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(.75);
+  }
+  100% {
+    transform: scale(.75);
+  }
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/*                                  MEDIA MIN_WIDTH                                            */
+/*---------------------------------------------------------------------------------------------*/
+
+@media (min-width: 480px) {
+
+}
+
+@media (min-width: 720px) {
+
+}
+@media (min-width: 1000px) {
+
+}
+
+@media (min-width: 1200px) {
+
+}
+
+@media (min-width: 1440px) {
+
+
+}
