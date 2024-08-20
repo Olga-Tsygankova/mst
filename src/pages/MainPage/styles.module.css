@@ -28,13 +28,13 @@
   font-weight: 700;
 }
 
+* {
+  font-family: 'Involve';
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Unbounded';
   text-transform: uppercase;
-}
-
-p {
-  font-family: 'Involve';
 }
 
 .mainPageWrapper {
