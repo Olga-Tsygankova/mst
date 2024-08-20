@@ -3,6 +3,7 @@ import styles from './styles.module.css';
 import { HeartSection } from '../../components/HeartSection';
 import { Intro } from '../../components/Intro';
 import { Leader } from '../../components/Leader';
+import { Result } from '../../components/Result';
 
 
 export const MainPage = () => {
@@ -10,6 +11,7 @@ export const MainPage = () => {
     <div className={styles.mainPageWrapper}>
       <Intro />
       <Leader />
+      <Result />
       <Need />
       <HeartSection />
     </div>
