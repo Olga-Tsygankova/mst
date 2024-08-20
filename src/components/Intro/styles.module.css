@@ -1,8 +1,8 @@
 .intro {
 	background: center no-repeat url(../../assets/Intro/background.svg);
-	margin: -83px -75px;
+
+	margin: -83px -75px 472px;
 	padding: 83px 75px;
-	margin-bottom: 472px;
 }
 
 
@@ -10,9 +10,9 @@
 	.intro {
 		background: center no-repeat url(../../assets/Intro/background-360.svg);
 		background-size: cover;
-		margin: -114px -32px;
+
+		margin: -114px -32px 472px;
 		padding: 114px 32px;
-		margin-bottom: 472px;
 	}
 }
 
@@ -32,12 +32,12 @@
 
 @media (min-width: 1440px) {
 	.intro {
-		max-width: 1440px;
 		background: center no-repeat url(../../assets/Intro/background.svg);
 		background-size: cover;
-		margin: -83px -75px -259px;
-		margin: 0 auto;
+
+		max-width: 1440px;
+
+		margin: 0 auto 472px;
 		padding: 83px 75px 259px;
-		margin-bottom: 472px;
 	}
 }
