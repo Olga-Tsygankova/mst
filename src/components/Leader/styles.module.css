@@ -4,15 +4,15 @@
 
 	position: relative;
 
-	margin: 0 0 140px;
+	width: 100%;
+	max-width: 344px;
+	margin: 0 auto 140px;
 	padding: 0 0 0 10px;
 }
 
-@media (min-width: 1050px) {
-
+@media (min-width: 768px) {
 	.wrapper {
 		max-width: 658px;
-		width: 100%;
 		margin: 0 auto 317px;
 	}
 }
@@ -20,7 +20,6 @@
 @media (min-width: 1050px) {
 
 	.wrapper {
-		max-width: 993px;
 		padding: 0 153px;
 	}
 }
@@ -28,6 +27,8 @@
 @media (min-width: 1440px) {
 
 	.wrapper {
+		max-width: 993px;
+
 		padding: 0 110px;
 	}
 }
@@ -80,8 +81,8 @@
 	transform: rotate(90deg);
 
 	position: absolute;
-	top: 246px;
-	right: -192px;
+	top: 209px;
+	right: -140px;
 
 	padding: 10.5px 0;
 }
@@ -89,16 +90,16 @@
 @media (min-width: 768px) {
 
 	.titleAnimation {
-		top: 400px;
-		right: -320px;
+		top: 327px;
+		right: -235px;
 	}
 }
 
 @media (min-width: 1050px) {
 
 	.titleAnimation {
-		top: 504px;
-		right: -413px;
+		top: 414px;
+		right: -308px;
 	}
 }
 
