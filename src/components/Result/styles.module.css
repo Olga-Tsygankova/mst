@@ -1,0 +1,94 @@
+.wrapper {
+	max-width: 355px;
+	margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+	.wrapper {
+		max-width: 704px;
+	}
+}
+
+@media (min-width: 1440px) {
+	.wrapper {
+		max-width: 1290px;
+	}
+}
+
+.title {
+	font-size: 26px;
+	line-height: 132%;
+	font-weight: 600;
+
+	margin-bottom: 18px;
+}
+
+@media (min-width: 768px) {
+	.title {
+		font-size: 32px;
+	}
+}
+
+@media (min-width: 1440px) {
+	.title {
+		font-size: 48px;
+	}
+}
+
+.cardWrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	gap: 20px;
+}
+
+@media (min-width: 1440px) {
+	.cardWrapper {
+		flex-direction: row;
+	}
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	max-width: 355px;
+	gap: 32px;
+	padding: 40px 24px;
+	border-radius: 22px;
+
+	background-color: #1A1A1A;
+
+	color: #F5F1EE;
+}
+
+.cardOrange {
+	background: rgb(235,72,36);
+	background: linear-gradient(180deg, rgba(235,72,36,1) 0%, rgba(227,133,23,1) 100%);
+}
+
+.cardWhite {
+	background: rgb(231,231,231);
+	background: linear-gradient(90deg, rgba(231,231,231,1) 0%, rgba(252,252,252,1) 100%);
+
+	color: #121212;
+}
+
+.cardTitle {
+	margin-bottom: -16px;
+
+	font-size: 20px;
+	line-height: 150%;
+	font-weight: 600;
+}
+
+.cardDescription {
+	font-size: 14px;
+	line-height: 150%;
+	font-weight: 400;
+}
+
+.cardDescriptionSemibold {
+	font-weight: 600;
+}
