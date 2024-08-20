@@ -4,7 +4,6 @@
 
 	position: relative;
 
-	width: 100%;
 	max-width: 344px;
 	margin: 0 auto 140px;
 	padding: 0 0 0 10px;
@@ -13,6 +12,7 @@
 @media (min-width: 768px) {
 	.wrapper {
 		max-width: 658px;
+		width: 100%;
 		margin: 0 auto 317px;
 	}
 }
