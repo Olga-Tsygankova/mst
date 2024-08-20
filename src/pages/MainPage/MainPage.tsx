@@ -6,9 +6,9 @@ import { Leader } from '../../components/Leader';
 export const MainPage = () => {
   return (
     <div className={styles.mainPageWrapper}>
+      <Leader />
       <Need />
       <HeartSection />
-      <Leader />
     </div>
   );
 };
