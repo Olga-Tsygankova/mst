@@ -10,6 +10,7 @@
 }
 
 @media (min-width: 768px) {
+
 	.wrapper {
 		max-width: 658px;
 		width: 100%;
@@ -40,6 +41,7 @@
 	justify-content: flex-end;
 	flex-wrap: nowrap;
 	gap: 16px;
+
 	margin: 0 0 16px 0;
 
 	font-size: 38px;
