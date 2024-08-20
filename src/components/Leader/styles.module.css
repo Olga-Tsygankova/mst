@@ -45,6 +45,7 @@
 	margin: 0 0 16px 0;
 
 	font-size: 38px;
+	line-height: 110%;
 }
 
 @media (min-width: 768px) {
@@ -83,8 +84,8 @@
 	transform: rotate(90deg);
 
 	position: absolute;
-	top: 209px;
-	right: -140px;
+	top: 263px;
+	right: -192px;
 
 	padding: 10.5px 0;
 }
@@ -92,16 +93,16 @@
 @media (min-width: 768px) {
 
 	.titleAnimation {
-		top: 327px;
-		right: -235px;
+		top: 418px;
+		right: -320px;
 	}
 }
 
 @media (min-width: 1050px) {
 
 	.titleAnimation {
-		top: 414px;
-		right: -308px;
+		top: 522px;
+		right: -413px;
 	}
 }
 
