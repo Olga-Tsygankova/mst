@@ -28,13 +28,14 @@
   font-weight: 700;
 }
 
+body {
+  font-family: 'Involve';
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Unbounded';
 }
 
-p {
-  font-family: 'Involve';
-}
 
 .mainPageWrapper {
   padding: 45px 10px 210px;
@@ -69,7 +70,7 @@ p {
 
 @media (min-width: 1440px) {
   .mainPageWrapper {
-    padding: 83px 75px 259px;
+    padding: 0 75px 259px;
   }
 
 }
