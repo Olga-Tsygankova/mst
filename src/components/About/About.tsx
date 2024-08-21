@@ -5,18 +5,18 @@ export const About = () => {
         <section className={styles.about}>
             <div className={styles.aboutLeft}>
                 <div className={styles.left__first}>
-                    <p>Делаем полный анализ рынка</p>
+                    <p>Делаем полный <br/> анализ рынка</p>
                 </div>
                 <div className={styles.left__second}>
-                    <p>Разрабатываем креативные концепции</p>
+                    <p>Разрабатываем <br/> креативные концепции</p>
                 </div>
             </div>
-            <div className="aboutRight">
+            <div className={styles.aboutRight}>
                 <div className={styles.right__second}>
-                    <p>Вызываем эмоции и желание купить у ваших клиентов</p>
+                    <p>Вызываем эмоции и желание <br/> купить у ваших клиентов</p>
                 </div>
                 <div className={styles.right__first}>
-                    <p>Даём результат, который предвосхищает ожидания</p>
+                    <p>Даём результат, который <br/> предвосхищает ожидания</p>
                 </div>
             </div>
         </section>
