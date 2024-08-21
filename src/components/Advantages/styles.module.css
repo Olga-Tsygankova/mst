@@ -35,7 +35,7 @@
 	.advantages {
 		gap: 24px;
 		flex-direction: column;
-		margin-bottom: 80px;
+		margin: 0 auto 80px;
 	}
 }
 
