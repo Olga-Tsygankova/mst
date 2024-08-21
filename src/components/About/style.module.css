@@ -1,7 +1,7 @@
 .about {
     position: relative;
-    top: 0;
-    margin: -45px -10px;
+    top: -500px;
+    margin: -45px -32px;
     padding: 45px 0;
 }
 
@@ -13,10 +13,10 @@
     gap: 25px;
 }
 
-.aboutLeft,
+/* .aboutLeft,
 .aboutRight {
     width: 100%;
-}
+} */
 
 .left__first,
 .left__second,
@@ -27,8 +27,8 @@
     max-width: 390px;
     max-height: 390px;
     width: max-content;
-    
-    
+
+
     text-wrap: wrap;
     text-align: center;
     align-items: center;
@@ -87,6 +87,12 @@
         overflow: hidden;
     }
 
+    .about,
+    .aboutLeft,
+    .aboutRight {
+        gap: 40px;
+    }
+
     .left__first,
     .left__second,
     .right__first,
@@ -107,5 +113,13 @@
     .right__first p,
     .right__second p {
         max-width: none;
+    }
+}
+
+@media (min-width: 1440px) {
+    .about,
+    .aboutLeft,
+    .aboutRight {
+        gap: 25px;
     }
 }
