@@ -1,5 +1,6 @@
 .intro {
 	background: center no-repeat url(../../assets/Intro/background.svg);
+	overflow: hidden;
 
 	margin: -83px -75px 472px;
 	padding: 83px 75px;
@@ -11,7 +12,7 @@
 		background: center no-repeat url(../../assets/Intro/background-360.svg);
 		background-size: cover;
 
-		margin: -114px -32px 472px;
+		margin: -114px 0px 472px;
 		padding: 114px 32px;
 	}
 }
