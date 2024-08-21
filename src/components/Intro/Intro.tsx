@@ -4,11 +4,11 @@ import { Header } from './Header';
 import { Bublik } from './Bublik';
 
 export const Intro = () => {
-	return (
-		<section className={styles.intro}>
-			<Header />
-			<IntroTitle />
-			<Bublik />
-		</section>
-	)
-}
+  return (
+    <section className={styles.intro}>
+      <Header />
+      <IntroTitle />
+      <Bublik />
+    </section>
+  );
+};
