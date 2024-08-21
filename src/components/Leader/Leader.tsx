@@ -1,6 +1,6 @@
 import styles from './styles.module.css';
-import { Ball } from '../../components/Leader/Ball';
-import { Logo } from '../../components/Leader/Logo';
+import { Ball } from './Ball';
+import { Logo } from './Logo';
 
 export const Leader = () => {
   return (
