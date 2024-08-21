@@ -4,6 +4,7 @@ import { HeartSection } from '../../components/HeartSection';
 import { Intro } from '../../components/Intro';
 import { Leader } from '../../components/Leader';
 import { Result } from '../../components/Result';
+import { Hole } from '../../components/Hole';
 
 
 export const MainPage = () => {
@@ -12,6 +13,7 @@ export const MainPage = () => {
       <Intro />
       <Leader />
       <Result />
+      <Hole />
       <Need />
       <HeartSection />
     </div>

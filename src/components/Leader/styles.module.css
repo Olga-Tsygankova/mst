@@ -11,11 +11,11 @@
 
 @media (min-width: 768px) {
 
-  .wrapper {
-    max-width: 658px;
-    width: 100%;
-    margin: 0 auto 317px;
-  }
+	.wrapper {
+		max-width: 1000px;
+		width: 100%;
+		margin: 0 auto 317px;
+	}
 }
 
 @media (min-width: 1050px) {
