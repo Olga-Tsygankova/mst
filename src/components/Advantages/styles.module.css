@@ -42,9 +42,9 @@
 @media (min-width: 768px) {
 	.advantages {
 		max-width: none;
-		gap: 33px;
 		margin-bottom: 149px;
 
+		gap: 33px;
 		flex-direction: column;
 		align-self: flex-start;
 	}
@@ -60,9 +60,9 @@
 
 @media (min-width: 1440px) {
 	.advantages {
-		gap: 53px;
 		margin-bottom: 195;
 
+		gap: 53px;
 		flex-direction: row;
 		justify-content: center;
 		align-self: center;
