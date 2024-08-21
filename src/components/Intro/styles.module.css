@@ -12,7 +12,7 @@
     background: center no-repeat url(../../assets/Intro/background-360.svg);
     background-size: cover;
 
-		margin: -114px 0px 472px;
+		margin: -114px 0 472px -32px;
 		padding: 114px 32px;
 	}
 }
