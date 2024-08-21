@@ -4,7 +4,7 @@ export const Need = () => {
   return (
     <div className={styles.needWrapper}>
       <div className={styles.title}>
-       <h2>нам нужны</h2>
+        <h2>нам нужны</h2>
       </div>
       <div className={styles.section1}>
         <div className={styles.orangeSection}>
