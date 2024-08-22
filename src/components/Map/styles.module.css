@@ -1,0 +1,134 @@
+.wrapper {
+	display: flex;
+	justify-content: center;
+
+	color: #F5F1EE;
+}
+
+@media (min-width: 1050px) {
+
+  .wrapper {
+		padding: 117px 0;
+  }
+}
+
+.title {
+	position: relative;
+	width: max-content;
+
+	font-size: 26px;
+	font-weight: 600;
+	line-height: 150%;
+
+	color: #F5F1EE;
+}
+
+@media (min-width: 768px) {
+
+	.title {
+		font-size: 42px;
+	}
+}
+
+@media (min-width: 1050px) {
+
+  .title {
+		font-size: 56px;
+  }
+}
+
+.title::after {
+	content: url(../../assets/Map/logo.svg);
+	width: 35px;
+	height: 26px;
+
+	position: absolute;
+	right: -45px;
+	bottom: 30px;
+}
+
+.description {
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 150%;
+	letter-spacing: 0.01em;
+}
+
+@media (min-width: 768px) {
+
+	.description {
+		font-size: 20px;
+	}
+}
+
+@media (min-width: 1050px) {
+
+  .description {
+		font-size: 26px;
+  }
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/*                                  WRAPPER CONTRE MARGIN                                            */
+/*---------------------------------------------------------------------------------------------*/
+
+.wrapper {
+  margin: 0 -10px;
+}
+
+@media (min-width: 480px) {
+  .wrapper {
+    margin: 0 -20px;
+  }
+}
+
+@media (min-width: 720px) {
+  .wrapper {
+    margin: 0 -32px ;
+  }
+}
+
+@media (min-width: 1000px) {
+  .wrapper {
+    margin: 0 -32px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .wrapper {
+    margin: 0 -75px;
+  }
+
+}
+
+.contreWrapper {
+	max-width: 1440px;
+	width: 100%;
+
+	margin: 0 auto;
+
+	height: 100vh;
+
+	background-image: url(../../assets/Map/map.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+@media (min-width: 480px) {
+  .contreWrapper {
+    padding: 0 20px;
+  }
+}
+
+@media (min-width: 720px) {
+  .contreWrapper {
+    padding: 0 32px ;
+		height: 200vh;
+  }
+}
+
+@media (min-width: 1000px) {
+  .contreWrapper {
+    padding: 0 32px;
+  }
+}
