@@ -6,6 +6,8 @@ import { Leader } from '../../components/Leader';
 import { Advantages } from '../../components/Advantages';
 import { Result } from '../../components/Result';
 import { Hole } from '../../components/Hole';
+import { Folders } from '../../components/Folders'
+
 
 export const MainPage = () => {
   return (
@@ -15,6 +17,7 @@ export const MainPage = () => {
       <Leader />
       <Result />
       <Hole />
+      <Folders />
       <Need />
       <HeartSection />
     </div>
