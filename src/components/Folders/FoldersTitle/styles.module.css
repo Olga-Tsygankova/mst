@@ -1,0 +1,41 @@
+.foldersTitle h2 {
+	margin-top: 150px;
+	margin-bottom: 89px;
+
+	font-size: 24px;
+	line-height: 150%;
+}
+
+.title__orange {
+	background-color: #EB4824;
+}
+
+@media (min-width: 450px) {
+	.foldersTitle h2 {
+		font-size: 30px;
+	}
+}
+
+@media (min-width: 580px) {
+	.foldersTitle h2 {
+		font-size: 39px;
+	}
+}
+
+@media (min-width: 768px) {
+	.foldersTitle h2 {
+		font-size: 48px;
+
+		margin-top: 243px;
+		margin-bottom: 142px;
+	}
+}
+
+@media (min-width: 1440px) {
+	.foldersTitle {
+		text-align: center;
+		margin: 51px auto 206px;
+
+		max-width: 830px;
+	}
+}

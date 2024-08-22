@@ -1,0 +1,19 @@
+.folders {
+	margin-bottom: 200px;
+}
+
+.foldersWrapper {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.foldersWrapper > div > img {
+	max-width: 190px;
+}
+
+@media (min-width: 768px) {
+	.foldersWrapper > div > img {
+		max-width: none;
+	}
+}
