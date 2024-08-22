@@ -7,6 +7,7 @@ import { Advantages } from '../../components/Advantages';
 import { Result } from '../../components/Result';
 import { Hole } from '../../components/Hole';
 import { Map } from '../../components/Map';
+import { Folders } from '../../components/Folders'
 
 export const MainPage = () => {
   return (
@@ -17,6 +18,7 @@ export const MainPage = () => {
       <Result />
       <Hole />
       <Map />
+      <Folders />
       <Need />
       <HeartSection />
     </div>
