@@ -6,17 +6,18 @@ import { Leader } from '../../components/Leader';
 import { Advantages } from '../../components/Advantages';
 import { Result } from '../../components/Result';
 import { Hole } from '../../components/Hole';
+import { Map } from '../../components/Map';
 import { Folders } from '../../components/Folders'
-
 
 export const MainPage = () => {
   return (
-    <div className={styles.mainPageWrapper}>      
+    <div className={styles.mainPageWrapper}>
       <Intro />
       <Advantages />
       <Leader />
       <Result />
       <Hole />
+      <Map />
       <Folders />
       <Need />
       <HeartSection />
