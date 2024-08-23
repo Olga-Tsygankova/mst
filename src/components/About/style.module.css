@@ -48,6 +48,10 @@
 }
 
 @media (min-width: 360px) {
+    .about {
+        margin: -45px 0;
+    }
+
     .about,
     .aboutLeft,
     .aboutRight {
@@ -85,6 +89,7 @@
 @media (min-width: 768px) {
     .about {
         overflow: hidden;
+        margin: -45px -32px;
     }
 
     .about,
