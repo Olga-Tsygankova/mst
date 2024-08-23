@@ -159,6 +159,24 @@
   }
 }
 
+@keyframes moveSection1 {
+  0% {
+    transform: translate(-50px, 50px);
+  }
+  100% {
+    transform: translate(50px, -50px);
+  }
+}
+
+@keyframes moveSection2 {
+  0% {
+    transform: translate(-50px, -50px);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
 /*---------------------------------------------------------------------------------------------*/
 /*                                  MEDIA MIN_WIDTH                                            */
 /*---------------------------------------------------------------------------------------------*/
