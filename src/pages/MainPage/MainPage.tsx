@@ -19,8 +19,8 @@ export const MainPage = () => {
       <Leader />
       <Result />
       <Hole />
-      <Map />
       <Folders />
+      <Map />
       <Need />
       <HeartSection />
     </div>
