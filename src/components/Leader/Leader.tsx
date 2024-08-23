@@ -8,6 +8,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+/*---------------------------------------------------------------------------------------------*/
+/*                                  Анимация плавного появления букв                           */
+/*---------------------------------------------------------------------------------------------*/
+
 interface AnimatedSpanProps {
   children: React.ReactNode;
   className?: string;
@@ -18,19 +22,57 @@ const AnimatedSpan: React.FC<AnimatedSpanProps> = ({ children, className }) => {
 
   useEffect(() => {
     if (spanRef.current) {
+      const letters = spanRef.current.querySelectorAll(`.${styles.letter}`);
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: spanRef.current,
+          start: 'top 90%',
+          end: 'bottom 40%',
+          scrub: true,
+        },
+      });
+
+      tl.fromTo(
+        letters,
+        { y: -50, opacity: 0 },
+        { y: 0, opacity: 1, ease: 'power2.out', stagger: 0.05 }
+      );
+    }
+  }, []);
+
+  return (
+    <span ref={spanRef} className={className}>
+      {String(children).split('').map((letter, index) => (
+        <span key={index} className={styles.letter}>
+          {letter.trim() === '' ? '\u00A0' : letter}
+        </span>
+      ))}
+    </span>
+  );
+};
+
+/*---------------------------------------------------------------------------------------------*/
+/*                                  Анимация выезда тайтла                                     */
+/*---------------------------------------------------------------------------------------------*/
+
+const ScrollReveal: React.FC<ScrollRevealProps> = ({ children, className }) => {
+  const revealRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (revealRef.current) {
       gsap.fromTo(
-        spanRef.current,
-        { opacity: 0, y: 50 }, // Начальное состояние анимации (невидимый и сдвинутый вниз)
+        revealRef.current.children,
+        { y: 800, opacity: 0 },
         {
-          opacity: 1,          // Конечное состояние (полностью видимый)
-          y: 0,                // Возвращаем в исходное положение
-          duration: 1,         // Продолжительность анимации 1 секунда
-          ease: 'power2.out',  // Плавная анимация
+          y: 0, opacity: 1,
+          duration: 1,
+          ease: 'power2.out',
           scrollTrigger: {
-            trigger: spanRef.current,  // Элемент, который будет триггером для анимации при скролле
-            start: 'top 80%',          // Анимация начинается, когда верх элемента достигает 80% окна
-            end: 'bottom 60%',         // Анимация заканчивается, когда низ элемента достигает 60% окна
-            toggleActions: 'play none none reverse', // Что делать при скролле: проиграть анимацию и вернуться назад
+            trigger: revealRef.current,
+            start: 'top 60%',
+            end: 'bottom 30%',
+            scrub: true,
           },
         }
       );
@@ -38,7 +80,46 @@ const AnimatedSpan: React.FC<AnimatedSpanProps> = ({ children, className }) => {
   }, []);
 
   return (
-    <span ref={spanRef} className={className}>
+    <span ref={revealRef} className={styles.titleAnimationComponent}>
+      {children}
+    </span>
+  );
+};
+
+/*---------------------------------------------------------------------------------------------*/
+/*                                  Анимация выезда иконки                                     */
+/*---------------------------------------------------------------------------------------------*/
+
+interface SvgRevealProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+const SvgReveal: React.FC<SvgRevealProps> = ({ children, className }) => {
+  const svgRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    if (svgRef.current) {
+      gsap.fromTo(
+        svgRef.current,
+        { y: 300, opacity: 0 },
+        {
+          y: 0, opacity: 1,
+          duration: 1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: svgRef.current,
+            start: 'top 80%',
+            end: 'bottom 60%',
+            scrub: true,
+          },
+        }
+      );
+    }
+  }, []);
+
+  return (
+    <span ref={svgRef} className={`${styles.logo} ${className}`}>
       {children}
     </span>
   );
@@ -48,11 +129,11 @@ export const Leader = () => {
   return (
     <section className={styles.wrapper}>
       <h2 className={styles.title}>
-      <AnimatedSpan className={styles.titleNormal}>Лидеры в</AnimatedSpan>
-        <span className={styles.logo}>
+        <AnimatedSpan className={styles.titleNormal}>Лидеры в</AnimatedSpan>
+        <SvgReveal><span className={styles.logo}>
           <Logo />
-        </span>
-        <AnimatedSpan className={styles.titleNormal}><span className={styles.titleAnimation}>Лидогенерации</span></AnimatedSpan>
+        </span></SvgReveal>
+        <ScrollReveal><span className={styles.titleAnimation}>Лидогенерации</span></ScrollReveal>
       </h2>
       <p className={styles.description}>
         Наша цель — стать компанией №&nbsp;1 в&nbsp;лидогенерации и мы уверенно
