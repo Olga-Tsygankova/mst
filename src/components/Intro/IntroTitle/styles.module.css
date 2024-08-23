@@ -9,6 +9,10 @@ h1 {
 	gap: 44px;
 	margin-top: 120px;
 	max-width: 950px;
+
+	position: relative;
+
+	z-index: 1;
 }
 
 .introTitle > h1 {
