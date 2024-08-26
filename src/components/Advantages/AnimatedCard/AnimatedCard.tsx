@@ -3,17 +3,15 @@ import { useInView } from 'react-intersection-observer';
 import styles from './styles.module.css'; // Подключение CSS-модуля
 
 export const AnimatedCard: React.FC<AnimatedCardProps> = ({ targetNumber, text, index }) => {
-  // Используем threshold: 0.5, чтобы анимация сработала, когда 50% блока будут видны
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.5, // Триггер срабатывает, когда 50% блока находятся в зоне видимости
+    threshold: 0.5,
   });
 
   const [displayNumber, setDisplayNumber] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isAnimating, setIsAnimating] = useState(false);
 
-  // Анимация числа
   useEffect(() => {
     if (inView && !isAnimating) {
       setIsAnimating(true);
@@ -36,20 +34,19 @@ export const AnimatedCard: React.FC<AnimatedCardProps> = ({ targetNumber, text, 
     }
   }, [inView, isAnimating, targetNumber]);
 
-  // Анимация текста
   useEffect(() => {
     if (inView && displayText !== text) {
       let iteration = 0;
-      const totalIterations = text.length + 5; // Общие итерации: немного больше длины текста
+      const totalIterations = text.length + 5;
       const interval = setInterval(() => {
         setDisplayText((prevText) => {
           return text
             .split('')
             .map((_, index) => {
               if (iteration < totalIterations && iteration <= index) {
-                return Math.random().toString(36).substring(2, 3); // Случайный символ
+                return Math.random().toString(36).substring(2, 3);
               } else if (iteration >= index) {
-                return text[index]; // Правильный символ на своём месте
+                return text[index];
               }
               return prevText[index] || ' ';
             })
@@ -58,11 +55,11 @@ export const AnimatedCard: React.FC<AnimatedCardProps> = ({ targetNumber, text, 
 
         if (iteration > totalIterations) {
           clearInterval(interval);
-          setDisplayText(text); // Установить финальный текст
+          setDisplayText(text);
         } else {
           iteration++;
         }
-      }, 100); // Скорость анимации текста
+      }, 100);
 
       return () => clearInterval(interval);
     }
@@ -72,10 +69,12 @@ export const AnimatedCard: React.FC<AnimatedCardProps> = ({ targetNumber, text, 
     <div
       ref={ref}
       className={`${styles.card} ${inView ? styles.fadeIn : ''}`}
-      style={{ transitionDelay: `${index * 0.3}s` }} // Задержка для анимации
+      style={{ transitionDelay: `${index * 0.3}s` }}
     >
       <div className={styles.cardContent}>
-        <div className={styles.number}>{displayNumber}</div>
+        <div className={styles.number}>
+          {index === 0 ? `>${displayNumber}` : displayNumber}
+        </div>
         <div className={styles.text}>{displayText}</div>
       </div>
     </div>

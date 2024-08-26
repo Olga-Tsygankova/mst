@@ -17,7 +17,7 @@ export const Advantages = () => {
 				<p className={styles.advantages__text}>отделов для идеального результата</p>
 			</div> */}
 			<div className={styles.advantagesContent}>
-				<AnimatedCard targetNumber={10} text="лет опыта" index={0} />
+				<AnimatedCard targetNumber={&10} text="лет опыта" index={0} />
 			</div>
 			<div className={styles.advantagesContent}>
 				<AnimatedCard targetNumber={85} text="высококлассных специалистов" index={1} />

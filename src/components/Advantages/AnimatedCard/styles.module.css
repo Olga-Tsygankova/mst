@@ -22,21 +22,23 @@
   box-sizing: border-box; /* Учитываем padding внутри ширины */
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Выравнивание текста по вертикали */
+  justify-content: end; /* Выравнивание текста по вертикали */
   overflow: hidden; /* Скрываем вылезающий текст */
 }
 
 .number {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 10px;
+  font-size: 60px;
+  font-family: 'Unbounded';
+  margin-bottom: 4px;
   opacity: 0;
   animation: fadeInNumber 1s ease-out forwards;
 }
 
 .text {
-  font-size: 1.2rem;
+  font-size: 20px;
+  font-weight: bold;
   opacity: 1;
+  color: #F5F1EE70;
   word-wrap: break-word; /* Если текст длинный, переносим его */
   /* Анимация текста будет происходить через JavaScript, поэтому здесь только базовые стили */
 }
