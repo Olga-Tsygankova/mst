@@ -45,7 +45,7 @@ export const AnimatedCard: React.FC<AnimatedCardProps> = ({ targetNumber, text, 
         setDisplayText((prevText) => {
           return text
             .split('')
-            .map((char, index) => {
+            .map((_, index) => {
               if (iteration < totalIterations && iteration <= index) {
                 return Math.random().toString(36).substring(2, 3); // Случайный символ
               } else if (iteration >= index) {
