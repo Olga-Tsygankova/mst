@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 
   max-width: 372px;
 
@@ -9,6 +10,8 @@
 
   border: 1px solid #F5F1EE;
   border-radius: 100px;
+
+  z-index: 1;
 }
 
 .headerContent {
