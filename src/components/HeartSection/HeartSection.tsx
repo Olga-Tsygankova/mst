@@ -3,28 +3,62 @@ import { Arrow } from './Arrow';
 import { ArrowLine } from './ArrowLine';
 import { Heart } from './Heart';
 import { useEffect, useRef, useState } from 'react';
-// import ScrollMagic from 'scrollmagic';
 
 export const HeartSection = () => {
   const arrowRef = useRef<HTMLDivElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const [isVisible, setIsVisible] = useState(true);
+  const [visibleBlocks, setVisibleBlocks] = useState([
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
+  const [isArrowVisible, setIsArrowVisible] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (containerRef.current) {
+      if (arrowRef.current && containerRef.current) {
+        const arrowRect = arrowRef.current.getBoundingClientRect();
         const containerRect = containerRef.current.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
+        const textBlocks = containerRef.current.querySelectorAll(
+          `.${styles.textBlock}`,
+        );
 
-        if (containerRect.bottom < windowHeight / 2) {
-          setIsVisible(false);
+        // Check if the arrow is at the same vertical level as each text block
+        textBlocks.forEach((block, index) => {
+          const blockRect = block.getBoundingClientRect();
+          if (
+            arrowRect.top < blockRect.bottom &&
+            arrowRect.bottom > blockRect.top
+          ) {
+            setVisibleBlocks((prev) => {
+              const newVisibleBlocks = [...prev];
+              newVisibleBlocks[index] = true; // Set block to visible
+              return newVisibleBlocks;
+            });
+          } else {
+            setVisibleBlocks((prev) => {
+              const newVisibleBlocks = [...prev];
+              newVisibleBlocks[index] = false; // Set block to not visible
+              return newVisibleBlocks;
+            });
+          }
+        });
+
+        // Check if the arrow has reached the bottom of the container
+        if (arrowRect.bottom >= containerRect.bottom) {
+          setIsArrowVisible(false); // Hide the arrow
         } else {
-          setIsVisible(true);
+          setIsArrowVisible(true); // Show the arrow
         }
       }
     };
 
     window.addEventListener('scroll', handleScroll);
+
+    // Initial check on mount
+    handleScroll();
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -35,15 +69,30 @@ export const HeartSection = () => {
     <div className={styles.wrapper}>
       <div className={styles.container} ref={containerRef}>
         <div className={styles.leftText}>
-          <div>Удаленная работа</div>
-          <div>Обучение, наставничество и поддержка</div>
-          <div>Праздники и корпоративы в Дубае и других странах</div>
+          <div
+            className={styles.textBlock}
+            style={{ opacity: visibleBlocks[0] ? 1 : 0.3 }}
+          >
+            Удаленная работа
+          </div>
+          <div
+            className={styles.textBlock}
+            style={{ opacity: visibleBlocks[1] ? 1 : 0.3 }}
+          >
+            Обучение, наставничество и поддержка
+          </div>
+          <div
+            className={styles.textBlock}
+            style={{ opacity: visibleBlocks[2] ? 1 : 0.3 }}
+          >
+            Праздники и корпоративы в Дубае и других странах
+          </div>
         </div>
         <div>
           <div
             className={styles.arrow}
             ref={arrowRef}
-            style={{ opacity: isVisible ? 1 : 0 }}
+            style={{ opacity: isArrowVisible ? 1 : 0 }} // Arrow visibility controlled here
           >
             <Arrow />
           </div>
@@ -52,10 +101,16 @@ export const HeartSection = () => {
           </div>
         </div>
         <div className={styles.rightText}>
-          <div>
+          <div
+            className={styles.textBlock}
+            style={{ opacity: visibleBlocks[3] ? 1 : 0.3 }}
+          >
             Открытое общение и максимум свободы в рамках выполнения задач
           </div>
-          <div>
+          <div
+            className={styles.textBlock}
+            style={{ opacity: visibleBlocks[4] ? 1 : 0.3 }}
+          >
             Комфортная команда, которая создает идеальную среду для роста
           </div>
         </div>

@@ -78,6 +78,11 @@
   animation: heartbeat 3s infinite;
 }
 
+.textBlock {
+  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
+
+
 /*.btn {*/
 /*  font-size: 17px;*/
 /*  width: 206px;*/
