@@ -11,7 +11,7 @@ export const Folders = () => {
     useEffect(() => {
         const folders = gsap.utils.toArray(`.${styles.folder}`) as HTMLElement[];
 
-        folders.forEach((folder, index) => {
+        folders.reverse().forEach((folder, index) => {
             gsap.to(folder, {
                 y: -200,    // Поднимает папку вверх
                 opacity: 0, // Плавное исчезновение
