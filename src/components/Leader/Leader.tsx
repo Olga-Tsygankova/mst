@@ -2,6 +2,10 @@ import styles from './styles.module.css';
 import { Ball } from './Ball';
 import { Logo } from './Logo';
 
+import drop from '../../assets/Leader/drop.svg'
+import dropSmall from '../../assets/Leader/dropSmall.svg'
+
+
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -56,7 +60,12 @@ const AnimatedSpan: React.FC<AnimatedSpanProps> = ({ children, className }) => {
 /*                                  Анимация выезда тайтла                                     */
 /*---------------------------------------------------------------------------------------------*/
 
-const ScrollReveal: React.FC<ScrollRevealProps> = ({ children, className }) => {
+interface ScrollRevealProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+const ScrollReveal: React.FC<ScrollRevealProps> = ({ children }) => {
   const revealRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -141,6 +150,8 @@ export const Leader = () => {
       </p>
       <div className={styles.ball}>
         <Ball />
+        <div className={styles.drop}><img src={drop} alt="" /></div>
+        <div className={styles.drop}><img src={dropSmall} alt="" /></div>
       </div>
     </section>
   );
