@@ -30,6 +30,22 @@
   margin-top: 168px;
 }
 
+.arrow {
+  position: sticky;
+  top: 30%;
+
+  display: flex;
+  justify-content: center;
+
+  z-index: 1;
+
+  transition: opacity 0.3s ease;
+}
+
+.arrow.visible {
+  opacity: 1;
+}
+
 .arrow svg {
   width: 37px;
 }
@@ -138,6 +154,7 @@
 .btn:active {
   transform: translateY(-3px);
 }
+
 
 /*---------------------------------------------------------------------------------------------*/
 /*                                  ANIMATION                                           */
