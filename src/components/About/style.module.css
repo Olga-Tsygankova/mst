@@ -1,0 +1,144 @@
+.about {
+    position: relative;
+    top: -64px;
+    margin: -45px -32px;
+    padding: 45px 0;
+}
+
+.about,
+.aboutLeft,
+.aboutRight {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+/* .aboutLeft,
+.aboutRight {
+    width: 100%;
+} */
+
+.left__first,
+.left__second,
+.right__first,
+.right__second {
+    display: flex;
+    justify-content: center;
+    max-width: 390px;
+    max-height: 390px;
+    width: max-content;
+
+
+    text-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+
+    background: url(../../assets/About/about__back.svg) center no-repeat;
+    background-size: cover;
+}
+
+.left__first p,
+.left__second p,
+.right__first p,
+.right__second p {
+    max-width: 150px;
+}
+
+@media (min-width: 360px) {
+    .about {
+        margin: -45px 0;
+    }
+
+    .about,
+    .aboutLeft,
+    .aboutRight {
+        gap: 10px;
+    }
+
+    .left__first,
+    .left__second,
+    .right__first,
+    .right__second {
+        min-width: 170px;
+        min-height: 170px;
+
+        font-size: 14px;
+    }
+
+    .left__first,
+    .right__second {
+        display: none;
+    }
+}
+
+@media (min-width: 550px) {
+    .left__first,
+    .left__second,
+    .right__first,
+    .right__second {
+        min-width: 200px;
+        min-height: 200px;
+
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 768px) {
+    .about {
+        overflow: hidden;
+        margin: -45px -32px;
+    }
+
+    .about,
+    .aboutLeft,
+    .aboutRight {
+        gap: 40px;
+    }
+
+    .left__first,
+    .left__second,
+    .right__first,
+    .right__second {
+        min-width: 300px;
+        min-height: 300px;
+
+        font-size: 18px;
+    }
+
+    .left__first,
+    .right__second {
+        display: flex;
+    }
+
+    .left__first p,
+    .left__second p,
+    .right__first p,
+    .right__second p {
+        max-width: none;
+    }
+}
+
+@media (min-width: 1440px) {
+    .about {
+        top: -301px;
+        margin: -45px -75px;
+
+    }
+
+    .about,
+    .aboutLeft,
+    .aboutRight {
+        gap: 25px;
+    }
+
+    .left__first,
+    .left__second,
+    .right__first,
+    .right__second {
+        min-width: 390px;
+        min-height: 390px;
+    }
+}
