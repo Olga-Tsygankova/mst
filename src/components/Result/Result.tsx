@@ -10,7 +10,7 @@ interface CardScrollAnimationProps {
   children: React.ReactNode;
 }
 
-const CardScrollAnimation: React.FC<CardScrollAnimationProps> = ({ children }) => {
+const CardScrollAnimation = ({ children }: CardScrollAnimationProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -20,8 +20,8 @@ const CardScrollAnimation: React.FC<CardScrollAnimationProps> = ({ children }) =
       gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: 'top top', // Начинаем анимацию, когда верх контейнера достигает верха окна
-          end: '+=100%', // Анимация длится на 300% высоты окна
+          start: 'top', // Начинаем анимацию, когда верх контейнера достигает верха окна
+          end: 'bottom', // Анимация длится на 300% высоты окна
           scrub: true, // Привязка анимации к прокрутке
           pin: true, // Фиксируем скролл на месте, пока длится анимация
           markers: true,
