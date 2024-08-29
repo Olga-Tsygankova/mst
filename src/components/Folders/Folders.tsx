@@ -20,7 +20,7 @@ export const Folders = () => {
                 scrollTrigger: {
                     trigger: folder,
                     start: 'top 50%', // Начало анимации, когда верх элемента пересекает 50% окна
-                    toggleActions: 'play none none none', // Запуск анимации
+                    toggleActions: 'play none reset none', // Запуск анимации
                 },
                 delay: index * 1 // Задержка перед началом анимации каждой следующей папки
             });
