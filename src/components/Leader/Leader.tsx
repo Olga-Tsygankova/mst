@@ -4,6 +4,7 @@ import { Logo } from './Logo';
 
 import drop from '../../assets/Leader/drop.svg'
 import dropSmall from '../../assets/Leader/dropSmall.svg'
+import dropBigger from '../../assets/Leader/dropBigger.svg'
 
 
 import React, { useEffect, useRef } from 'react';
@@ -150,8 +151,9 @@ export const Leader = () => {
       </p>
       <div className={styles.ball}>
         <Ball />
-        <div className={styles.drop}><img src={drop} alt="" /></div>
-        <div className={styles.drop}><img src={dropSmall} alt="" /></div>
+        <div className={styles.drop}><img src={drop} alt="Капля" /></div>
+        <div className={styles.drop}><img src={dropSmall} alt="Капля Маленькая" /></div>
+        <div className={styles.drop}><img src={dropBigger} alt="Капля Большая" /></div>
       </div>
     </section>
   );
