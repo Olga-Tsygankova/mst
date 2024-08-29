@@ -9,6 +9,7 @@ import { About } from '../../components/About';
 import { Hole } from '../../components/Hole';
 import { Map } from '../../components/Map';
 import { Folders } from '../../components/Folders'
+import { Tube } from '../../components/Tube'
 
 export const MainPage = () => {
   return (
@@ -18,6 +19,7 @@ export const MainPage = () => {
       <Advantages />
       <Leader />
       <Result />
+      <Tube />
       <Hole />
       <Folders />
       <Map />
