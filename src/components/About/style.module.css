@@ -1,4 +1,4 @@
-.about {
+/* .about {
     position: relative;
     top: -500px;
     margin: -45px -32px;
@@ -13,10 +13,10 @@
     gap: 25px;
 }
 
-/* .aboutLeft,
+.aboutLeft,
 .aboutRight {
     width: 100%;
-} */
+}
 
 .left__first,
 .left__second,
@@ -122,4 +122,54 @@
     .aboutRight {
         gap: 25px;
     }
+} */
+
+/* styles.module.css */
+.about {
+    position: relative;
+    top: -500px;
+    margin: -45px -32px;
+    padding: 45px 0;
+}
+
+.about,
+.aboutLeft,
+.aboutRight {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.left__first,
+.left__second,
+.right__first,
+.right__second {
+    display: flex;
+    justify-content: center;
+    max-width: 390px;
+    max-height: 390px;
+    width: max-content;
+    text-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    background: url(../../assets/About/about__back.svg) center no-repeat;
+    background-size: cover;
+    position: relative; /* Убедитесь, что элементы не перекрываются другими элементами */
+}
+
+/* Центрируем шарик */
+.centerBall {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background-color: #EB4824; /* Задайте цвет или изображение */
+    border-radius: 50%;
+    opacity: 0; /* Начальное состояние невидимо */
+    scale: 0; /* Начальный масштаб для анимации */
 }
