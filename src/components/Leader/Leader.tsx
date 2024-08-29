@@ -22,7 +22,7 @@ interface AnimatedSpanProps {
   className?: string;
 }
 
-const AnimatedSpan: React.FC<AnimatedSpanProps> = ({ children, className }) => {
+const AnimatedSpan = ({ children, className }: AnimatedSpanProps) => {
   const spanRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
@@ -57,16 +57,12 @@ const AnimatedSpan: React.FC<AnimatedSpanProps> = ({ children, className }) => {
   );
 };
 
-/*---------------------------------------------------------------------------------------------*/
-/*                                  Анимация выезда тайтла                                     */
-/*---------------------------------------------------------------------------------------------*/
-
 interface ScrollRevealProps {
   children: React.ReactNode;
   className?: string;
 }
 
-const ScrollReveal: React.FC<ScrollRevealProps> = ({ children }) => {
+const ScrollReveal = ({ children }: ScrollRevealProps) => {
   const revealRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -96,16 +92,12 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({ children }) => {
   );
 };
 
-/*---------------------------------------------------------------------------------------------*/
-/*                                  Анимация выезда иконки                                     */
-/*---------------------------------------------------------------------------------------------*/
-
 interface SvgRevealProps {
   children: React.ReactNode;
   className?: string;
 }
 
-const SvgReveal: React.FC<SvgRevealProps> = ({ children, className }) => {
+const SvgReveal = ({ children, className }: SvgRevealProps) => {
   const svgRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {

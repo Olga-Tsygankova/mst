@@ -194,9 +194,7 @@
   bottom: 0;
 
   opacity: 0.7;
-}
 
-.drop {
   animation: fall 1.7s linear infinite;
 }
 
@@ -259,7 +257,7 @@
       opacity: 1;
   }
   100% {
-      transform: translateY(200px);
+      transform: translateY(100px);
       opacity: 0;
   }
 }
@@ -270,7 +268,7 @@
       opacity: 1;
   }
   100% {
-      transform: translateY(150px);
+      transform: translateY(120px);
       opacity: 0;
   }
 }
