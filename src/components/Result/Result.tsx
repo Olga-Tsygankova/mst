@@ -15,7 +15,9 @@ const CardScrollAnimation = ({ children }: CardScrollAnimationProps) => {
 
   useEffect(() => {
     if (containerRef.current) {
-      const cards = containerRef.current.querySelectorAll(`.${styles.card}`);
+      const cardsRegular = containerRef.current.querySelectorAll(`.${styles.cardRegular}`);
+      const cardsOrange = containerRef.current.querySelectorAll(`.${styles.cardOrange}`);
+      const cardsWhite = containerRef.current.querySelectorAll(`.${styles.cardWhite}`);
 
       gsap.timeline({
         scrollTrigger: {
@@ -27,22 +29,34 @@ const CardScrollAnimation = ({ children }: CardScrollAnimationProps) => {
           markers: true,
         }
       })
-      .fromTo(cards,
-        { y: 200, rotation: -10, opacity: 0 }, // Начальное состояние (карточки снизу, повёрнуты, прозрачные)
+      .fromTo(cardsRegular,
+        { y: 800, rotation: -10, opacity: 0 }, // Начальное состояние (карточки снизу, повёрнуты, прозрачные)
         {
           y: 0, rotation: 0, opacity: 1, // Конечное состояние (карточки на месте, без поворота, видимые)
-          stagger: 0.3, // Задержка между анимацией каждой карточки
+          stagger: 0.9, // Задержка между анимацией каждой карточки
           ease: 'power2.out',
-          duration: 1
+          duration: 2
         }
       )
-      .to(cards,
-        { y: -200, rotation: 10, opacity: 0, // Возвращаем карточки обратно вверх, снова поворачивая
-          stagger: 0.3,
-          ease: 'power2.in',
-          duration: 1
+      .fromTo(cardsOrange,
+        { y: 800, rotation: 40, opacity: 0 }, // Начальное состояние (карточки снизу, повёрнуты, прозрачные)
+        {
+          y: 30, rotation: -10, opacity: 1, // Конечное состояние (карточки на месте, без поворота, видимые)
+          stagger: 0.9, // Задержка между анимацией каждой карточки
+          ease: 'power2.out',
+          duration: 2
         }
-      );
+      )
+
+      .fromTo(cardsWhite,
+        { y: 800, rotation: -40, opacity: 0 }, // Начальное состояние (карточки снизу, повёрнуты, прозрачные)
+        {
+          y: 30, rotation: 10, opacity: 1, // Конечное состояние (карточки на месте, без поворота, видимые)
+          stagger: 0.9, // Задержка между анимацией каждой карточки
+          ease: 'power2.out',
+          duration: 2
+        }
+      )
     }
   }, []);
 
@@ -64,7 +78,7 @@ export const Result = () => {
           <br /> и мягких подходов
         </h2>
         <div className={styles.cardWrapper}>
-          <div className={styles.card}>
+          <div className={`${styles.card} ${styles.cardRegular}`}>
             <h3 className={styles.cardTitle}>
               Правило «Win&nbsp;/&nbsp;Win&nbsp;/&nbsp;Win»
             </h3>
@@ -80,7 +94,7 @@ export const Result = () => {
             </p>
           </div>
           <div className={`${styles.card} ${styles.cardOrange}`}>
-            <h3 className={styles.cardTitle}>Высокие требования к результату</h3>
+            <h3 className={styles.cardTitle}>Высокие требования к&nbsp;результату</h3>
             <p className={styles.cardDescription}>
               Мы делаем всё, чтобы заказчик получил больше того, на что
               рассчитывал!
