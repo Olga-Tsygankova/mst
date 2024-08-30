@@ -1,69 +1,74 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './style.module.css';
 
+gsap.registerPlugin(ScrollTrigger);
+
 export const About = () => {
-    const leftFirstRef = useRef<HTMLDivElement>(null);
-    const leftSecondRef = useRef<HTMLDivElement>(null);
-    const rightFirstRef = useRef<HTMLDivElement>(null);
-    const rightSecondRef = useRef<HTMLDivElement>(null);
-    const centerBallRef = useRef<HTMLDivElement>(null);
 
+    const about = useRef(null);
+    const leftCont = useRef(null);
+    const rightCont = useRef(null);
+    const leftBubl = useRef(null);
+    const rightBubl = useRef(null);
+    const centerBall = useRef(null);
     useEffect(() => {
-        if (
-            leftFirstRef.current &&
-            leftSecondRef.current &&
-            rightFirstRef.current &&
-            rightSecondRef.current &&
-            centerBallRef.current
-        ) {
-            const ballAnimation = gsap.timeline();
+        const cont = about.current;
+        const leftContain = leftCont.current;
+        const rightContain = rightCont.current;
+        const leftBubble = leftBubl.current;
+        const rightBubble = rightBubl.current;
+        const center = centerBall.current;
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: cont,
+                start: 'top 40%',
 
-            ballAnimation
-                .to(leftFirstRef.current, {
-                    x: '10vw', // Передвигаем левый первый шарик
-                    opacity: 0, // Исчезает
-                    duration: 1,
-                    ease: 'power2.inOut'
-                })
-                .to(leftSecondRef.current, {
-                    x: '5vw', // Передвигаем левый второй шарик
-                    opacity: 0, // Исчезает
-                    duration: 1,
-                    ease: 'power2.inOut'
-                }, "<") // Используем '<' для синхронизации
-                .to(rightFirstRef.current, {
-                    x: '-5vw', // Передвигаем правый первый шарик
-                    opacity: 0, // Исчезает
-                    duration: 1,
-                    ease: 'power2.inOut'
-                }, "<")
-                .to(rightSecondRef.current, {
-                    x: '-10vw', // Передвигаем правый второй шарик
-                    opacity: 0, // Исчезает
-                    duration: 1,
-                    ease: 'power2.inOut'
-                }, "<")
-                .to(centerBallRef.current, {
-                    opacity: 1, // Появляется
-                    scale: 1, // Увеличивается до полного размера
-                    duration: 1,
-                    ease: 'power2.inOut'
-                });
-        }
-    }, []);
+                scrub: true,
+                pin: true
+            }
+        })
+        .fromTo(
+            [leftContain, rightContain],
+            {
+                x: (i) => i === 0 ? -170 : 170
+            },
+            {
+                x: (i) => i === 0 ? 0 : 0,
+                duration: 1,
+                opacity: 0
+            }
+        )
+        .fromTo(
+            [leftBubble, rightBubble],
+            {
+                x: (i) => i === 0 ? -510 : 510
+            },
+            {
+                x: (i) => i === 0 ? 0 : 0,
+                duration: 2,
+                zIndex: 1
+            }
+        )
+        .fromTo(center,
+        {
+            opacity: 0
+        },
+        {
+            opacity: 1,
+            zIndex: 2,
+        })
+
+    });
 
     return (
-        <section className={styles.about}>
-            <div className={styles.aboutLeft}>
-                <div ref={leftFirstRef} className={styles.left__first}>Делаем полный <br/> анализ рынка</div>
-                <div ref={leftSecondRef} className={styles.left__second}>Разрабатываем <br/> креативные концепции</div>
-            </div>
-            <div className={styles.aboutRight}>
-                <div ref={rightFirstRef} className={styles.right__first}>Вызываем эмоции и желание <br/> купить у ваших клиентов</div>
-                <div ref={rightSecondRef} className={styles.right__second}>Даём результат, который <br/> предвосхищает ожидания</div>
-            </div>
-            <div ref={centerBallRef} className={styles.centerBall}></div>
+        <section className={styles.about} ref={about}>
+            <div className={styles.left__first} ref={leftBubl}>Делаем полный анализ рынка</div>
+            <div className={styles.left__second} ref={leftCont}>Разрабатываем креативные концепции</div>
+            <div className={styles.right__first} ref={rightCont}>Вызываем эмоции и желание купить у ваших клиентов</div>
+            <div className={styles.right__second} ref={rightBubl}>Даём результат, который предвосхищает ожидания</div>
+            <div className={styles.centerBall} ref={centerBall}></div>
         </section>
     );
 };
