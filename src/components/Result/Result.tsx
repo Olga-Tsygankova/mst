@@ -26,7 +26,6 @@ const CardScrollAnimation = ({ children }: CardScrollAnimationProps) => {
           end: 'bottom', // Анимация длится на 300% высоты окна
           scrub: true, // Привязка анимации к прокрутке
           pin: true, // Фиксируем скролл на месте, пока длится анимация
-          markers: true,
         }
       })
       .fromTo(cardsRegular,
