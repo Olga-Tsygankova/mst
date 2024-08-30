@@ -45,13 +45,13 @@
     background-size: cover;
 }
 
+
 .centerBall {
     background: center no-repeat url(../../assets/About/centerBall.svg);
     background-size: cover;
 }
 
 @media (min-width: 768px) {
-
     .about {
         justify-content: center;
         min-width: auto;
@@ -77,6 +77,14 @@
 
 @media (min-width: 1440px) {
     .about {
+        min-height: 390px;
+    }
+
+    .left__first,
+    .left__second,
+    .right__first,
+    .right__second {
+        min-width: 390px;
         min-height: 390px;
     }
 }

@@ -1,6 +1,25 @@
+.section {
+  position:static;
+  margin-bottom: 0px;
+}
+
+@media (min-width: 768px) {
+  .section {
+    margin-bottom: 180px;
+  }
+}
+
 .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: flex-start;
+
   max-width: 355px;
+
   margin: 0 auto;
+  position: relative;
+  z-index: 100;
 }
 
 @media (min-width: 768px) {
@@ -42,10 +61,11 @@
   flex-direction: column;
   justify-content: stretch;
   align-items: stretch;
-  gap: 20px;
+  gap: 0px;
 
+  position: relative;
 
-  height: 950px;
+  height: 700px;
 }
 
 @media (min-width: 1440px) {
@@ -57,11 +77,13 @@
 
 .card {
   display: flex;
+
   flex-direction: column;
   justify-content: center;
   gap: 32px;
 
   height: 100%;
+  max-height: 385px;
   max-width: 355px;
 
   padding: 40px 24px;
@@ -74,20 +96,51 @@
 
 @media (min-width: 1440px) {
   .card {
+    max-width: 514px;
+    max-height: none;
+
     height: auto;
   }
 }
 
 .cardOrange {
+  margin: -90% 0 0;
+
   background: rgb(235, 72, 36);
   background: linear-gradient(180deg, rgba(235, 72, 36, 1) 0%, rgba(227, 133, 23, 1) 100%);
 }
 
+@media (min-width: 768px) {
+  .cardOrange {
+    margin: -50% 0 0 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  .cardOrange {
+    margin: 0 0 0 -5%;
+  }
+}
+
 .cardWhite {
+  margin: -90% 0 0;
+
   background: rgb(231, 231, 231);
   background: linear-gradient(90deg, rgba(231, 231, 231, 1) 0%, rgba(252, 252, 252, 1) 100%);
 
   color: #121212;
+}
+
+@media (min-width: 768px) {
+  .cardWhite {
+    margin: -50% 0 0 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  .cardWhite {
+    margin: 0 0 0 -5%;
+  }
 }
 
 .cardTitle {
