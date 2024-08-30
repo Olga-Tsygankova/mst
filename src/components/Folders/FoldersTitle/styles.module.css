@@ -6,8 +6,36 @@
 	line-height: 150%;
 }
 
-.title__orange {
+.titleOrange {
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+	vertical-align: bottom;
+}
+
+.titleOrange::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 100%;
 	background-color: #EB4824;
+	z-index: -1;
+}
+
+.titleOrange.animate::before {
+  animation: slideIn 2s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+  }
+  to {
+    width: 360px;
+  }
 }
 
 @media (min-width: 450px) {
@@ -34,7 +62,7 @@
 @media (min-width: 1440px) {
 	.foldersTitle {
 		text-align: center;
-		margin: 51px auto 206px;
+		margin: 51px auto 100px;
 
 		max-width: 830px;
 	}
