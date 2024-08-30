@@ -11,16 +11,14 @@
   },
   "dependencies": {
     "gsap": "^3.12.5",
-    "magic-scroll": "^0.0.12",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-intersection-observer": "^9.13.0",
-    "scrollmagic": "^2.0.8",
-    "scrolltrigger": "^1.0.1"
+    "scrollmagic": "^2.0.8"
   },
   "devDependencies": {
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.2",
     "@types/scrollmagic": "^2.0.8",
     "@typescript-eslint/eslint-plugin": "^7.15.0",
     "@typescript-eslint/parser": "^7.15.0",
