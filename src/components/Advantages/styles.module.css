@@ -4,31 +4,13 @@
 	max-width: max-content;
 }
 
+.advantagesContent:nth-child(2) {
+	align-self: flex-end;
+}
+
 .advantagesContent,
 .advantagesContentPlanshet {
-	background: url(../../assets/Advantages/folder.svg) center no-repeat;
-
-	padding: 94px 0 40px 40px;
 	max-width: 347px;
-}
-
-.advantages__title {
-	font-size: 60px;
-	font-family: 'Unbounded';
-	line-height: 150%;
-	color: #F5F1EE;
-
-	padding-left: 40px;
-}
-
-.advantages__text {
-	font-size: 20px;
-	font-weight: bold;
-	line-height: 150%;
-	color: #F5F1EE70;
-
-	padding-left: 40px;
-	padding-bottom: 40px;
 }
 
 @media (min-width: 360px) {

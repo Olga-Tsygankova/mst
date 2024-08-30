@@ -1,5 +1,29 @@
-.folders {
-	margin-bottom: 421px;
+.foldersContent {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 380px;
+}
+
+.foldersContent > a {
+	font-family: 'Involve';
+	font-size: 18px;
+	line-height: 150%;
+	letter-spacing: 0.1em;
+	font-weight: 600;
+	color: #F5F1EE;
+	text-decoration: none;
+	text-transform: uppercase;
+
+	min-width: 170px;
+
+	background: right no-repeat url(../../assets/Intro/arrow.svg);
+}
+
+.foldersWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .foldersWrapper {
@@ -81,6 +105,14 @@
 @media (min-width: 768px) {
 	.folders {
 		margin-bottom: 719px;
+	}
+
+	.introTitle > a {
+		font-size: 22px;
+		line-height: 150%;
+
+		max-width: 272px;
+
 	}
 
 	.folderImg > svg {
