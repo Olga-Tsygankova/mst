@@ -11,6 +11,7 @@ import { Map } from '../../components/Map';
 import { Folders } from '../../components/Folders';
 import { FormKP } from '../../components/Forms';
 import { useState } from 'react';
+import { Footer } from '../../components/Footer';
 
 export const MainPage = () => {
   const [showFormKP, setShowFormKP] = useState(false);
@@ -62,6 +63,7 @@ export const MainPage = () => {
         showForm={showFormWant}
         handleCloseForm={handleCloseFormWant}
       />
+      <Footer/>
     </div>
   );
 };
