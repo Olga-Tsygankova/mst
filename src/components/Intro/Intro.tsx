@@ -7,21 +7,21 @@ import { FormCase } from '../Forms/FormCase.tsx';
 
 type IProps = {
   onGetQuoteClick: () => void;
-  showForm: boolean;
+  showFormCase: boolean;
   handleCloseForm: () => void;
 };
 
 export const Intro = ({
   onGetQuoteClick,
-  showForm,
-  handleCloseForm,
+  showFormCase,
+  handleCloseForm
 }: IProps) => {
   return (
     <section className={styles.intro}>
       <Header />
       <GradientScroll />
       <IntroTitle onGetQuoteClick={onGetQuoteClick} />
-      {showForm && <FormCase onClose={handleCloseForm} />}
+      {showFormCase && <FormCase onClose={handleCloseForm} />}
       <Bublik />
     </section>
   );
