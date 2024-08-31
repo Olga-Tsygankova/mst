@@ -8,7 +8,11 @@ interface FormData {
   tel: string;
 }
 
-export const FormKP = () => {
+type IProps = {
+  onClose: () => void;
+};
+
+export const FormKP = ({ onClose }: IProps) => {
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -61,7 +65,7 @@ export const FormKP = () => {
   return (
     <div className={styles.container}>
       <div className={styles.wrapperClose}>
-        <button className={styles.close} />
+        <button className={styles.close} onClick={onClose} />
       </div>
       <div className={styles.formWrapper}>
         {isFormSubmitted ? (
@@ -74,7 +78,8 @@ export const FormKP = () => {
             <div className={styles.formText}>
               <h2>Запросить КП</h2>
               <span>
-                Оставьте заявку и мы пришлем Вам подборку с нашими кейсами
+                Оставьте заявку, наш менеджер свяжется с вами, чтобы собрать все
+                данные для подготовки предложения.{' '}
               </span>
             </div>
             <div>

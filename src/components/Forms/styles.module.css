@@ -8,8 +8,26 @@
   margin-left: auto;
   margin-right: auto;
 
-}
+  position: relative;
 
+  top: -450px;
+
+  z-index: 100;
+}
+.containerCase{
+  background-color: #F5F1EE;
+
+  padding: 10px;
+
+  max-width: 850px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  position: absolute;
+
+  z-index: 100;
+}
 .formWrapper {
   display: flex;
   flex-direction: column;
@@ -139,6 +157,7 @@
 }
 
 @media (min-width: 720px) {
+
   .formWrapper {
     flex-direction: row;
   }
@@ -156,6 +175,10 @@
   }
 
 }
+@media (min-width: 768px) {
+.container{
+  top: -800px;
+}}
 
 @media (min-width: 1000px) {
 
