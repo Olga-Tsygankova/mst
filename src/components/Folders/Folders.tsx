@@ -7,7 +7,11 @@ import { Folder } from './Folder';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const Folders = () => {
+type IProps = {
+  onGetQuoteClick: () => void;
+};
+
+export const Folders = ({ onGetQuoteClick }: IProps) => {
     useEffect(() => {
         const container = document.querySelector(`.${styles.foldersContent}`);
         const wrapper = document.querySelector(`.${styles.foldersWrapper}`);
@@ -53,7 +57,12 @@ export const Folders = () => {
         <section className={styles.folders}>
             <div className={styles.foldersContent}>
                 <FoldersTitle />
-                <a href='#'>Получить КП</a>
+                <a href='#' onClick={(e) => {
+                    e.preventDefault();
+                    onGetQuoteClick();
+                }}>
+                    Получить Кнопка
+                </a>
                 <div className={styles.foldersWrapper}>
                     <div className={styles.folder}>
                         <div className={styles.folder1}>
