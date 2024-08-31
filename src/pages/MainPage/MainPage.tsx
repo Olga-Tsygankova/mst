@@ -8,16 +8,14 @@ import { Result } from '../../components/Result';
 import { About } from '../../components/About';
 import { Hole } from '../../components/Hole';
 import { Map } from '../../components/Map';
-import { Folders } from '../../components/Folders'
-import {FormKP} from '../../components/Forms';
+import { Folders } from '../../components/Folders';
+import { FormKP } from '../../components/Forms';
 import { useState } from 'react';
 
 export const MainPage = () => {
   const [showFormKP, setShowFormKP] = useState(false);
   const [showFormCase, setShowFormCase] = useState(false);
   const [showFormWant, setShowFormWant] = useState(false);
-
-
 
   const handleGetQuoteClickKP = () => {
     console.log('Кнопка нажата, показываем форму'); // Проверка нажатия кнопки
@@ -43,21 +41,27 @@ export const MainPage = () => {
     setShowFormWant(false);
   };
 
-
   return (
     <div className={styles.mainPageWrapper}>
-      <Intro onGetQuoteClick={handleGetQuoteClickCase} showFormCase={showFormCase} handleCloseForm={handleCloseFormCase}/>
+      <Intro
+        onGetQuoteClick={handleGetQuoteClickCase}
+        showFormCase={showFormCase}
+        handleCloseForm={handleCloseFormCase}
+      />
       <About />
       <Advantages />
       <Leader />
       <Result />
       <Hole />
       <Folders onGetQuoteClick={handleGetQuoteClickKP} />
-      {showFormKP &&
-        <FormKP onClose={handleCloseFormKP}/>}
+      {showFormKP && <FormKP onClose={handleCloseFormKP} />}
       <Map />
       <Need />
-      <HeartSection onGetQuoteClick={handleGetQuoteClickWant} showForm={showFormWant} handleCloseForm={handleCloseFormWant} />
+      <HeartSection
+        onGetQuoteClick={handleGetQuoteClickWant}
+        showForm={showFormWant}
+        handleCloseForm={handleCloseFormWant}
+      />
     </div>
   );
 };
