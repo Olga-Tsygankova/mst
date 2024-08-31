@@ -3,8 +3,19 @@ import { Arrow } from './Arrow';
 import { ArrowLine } from './ArrowLine';
 import { Heart } from './Heart';
 import { useEffect, useRef, useState } from 'react';
+import { FormWant } from '../Forms/FormWant.tsx';
 
-export const HeartSection = () => {
+type IProps = {
+  onGetQuoteClick: () => void;
+  showForm: boolean;
+  handleCloseForm: () => void;
+};
+
+export const HeartSection = ({
+  onGetQuoteClick,
+  showForm,
+  handleCloseForm,
+}: IProps) => {
   const arrowRef = useRef<HTMLDivElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [visibleBlocks, setVisibleBlocks] = useState([
@@ -117,7 +128,16 @@ export const HeartSection = () => {
       </div>
       <div className={styles.heart}>
         <Heart />
-        <div className={styles.btn}>Хочу к вам</div>
+        <div
+          className={styles.btn}
+          onClick={(e) => {
+            e.preventDefault();
+            onGetQuoteClick();
+          }}
+        >
+          Хочу к вам
+        </div>
+        {showForm && <FormWant onClose={handleCloseForm} />}
       </div>
     </div>
   );

@@ -22,11 +22,10 @@ const CardScrollAnimation = ({ children }: CardScrollAnimationProps) => {
       gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: 'top', // Начинаем анимацию, когда верх контейнера достигает верха окна
+          start: 'top 10% center', // Начинаем анимацию, когда верх контейнера достигает верха окна
           end: 'bottom', // Анимация длится на 300% высоты окна
           scrub: true, // Привязка анимации к прокрутке
           pin: true, // Фиксируем скролл на месте, пока длится анимация
-          markers: true,
         }
       })
       .fromTo(cardsRegular,
