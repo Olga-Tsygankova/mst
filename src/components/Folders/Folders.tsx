@@ -35,11 +35,11 @@ export const Folders = ({ onGetQuoteClick }: IProps) => {
             tl.fromTo(folder,
                 { y: 0, opacity: 1 },
                 {
-                    y: -200, // Перемещаем вверх
+                    y: -100, // Перемещаем вверх
                     opacity: 0, // Плавное исчезновение
-                    ease: 'power2.in', // Плавность анимации
+                    ease: 'sine.in', // Плавность анимации
                     duration: 100, // Длительность анимации
-                }, "+=0.5"); // Задержка между анимациями
+                }, "+=5"); // Задержка между анимациями
         });
 
         // Анимация для всего wrapper после всех карточек
@@ -61,7 +61,7 @@ export const Folders = ({ onGetQuoteClick }: IProps) => {
                     e.preventDefault();
                     onGetQuoteClick();
                 }}>
-                    Получить Кнопка
+                    Получить кп
                 </a>
                 <div className={styles.foldersWrapper}>
                     <div className={styles.folder}>
