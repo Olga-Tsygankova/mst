@@ -16,16 +16,17 @@
 }
 
 .section1, .section2 {
+
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
 
 .orangeSection {
   text-align: center;
   font-size: 16px;
 
-  padding: 10px 10px;
+  padding: 10px;
 
   background-color: #FF4E27;
 
@@ -48,6 +49,12 @@
   margin-left: auto;
 }
 
+/*---------------------------------------------------------------------------------------------*/
+/*                                  ANIMATION                                                  */
+/*---------------------------------------------------------------------------------------------*/
+
+
+
 
 /*---------------------------------------------------------------------------------------------*/
 /*                                  MEDIA MIN_WIDTH                                            */
@@ -69,6 +76,23 @@
   .description1, .description2 {
     width: 200px;
   }
+
+  .section1:after{
+    content: url("./../../assets/svg/cursor.svg");
+
+    position: relative;
+    top: -85px;
+    left: 10px;
+  }
+
+  .section2:after{
+    content: url("./../../assets/svg/cursor.svg");
+
+    position: relative;
+    top: -85px;
+    left: 270px;
+  }
+
 }
 
 @media (min-width: 720px) {
@@ -116,12 +140,18 @@
     width: 344px;
 
     margin: 280px auto 0 0;
+
+    animation: moveSection2 5s infinite alternate;
+
   }
 
   .section1{
     width: 393px;
 
     margin: 0 0 0 auto;
+
+    animation: moveSection1 5s infinite alternate;
+
   }
 
   .title h2 {
@@ -139,5 +169,23 @@
 
   .title{
     position: relative;
+  }
+
+  @keyframes moveSection1 {
+    0% {
+      transform: translate(-20px, 20px);
+    }
+    100% {
+      transform: translate(20px, -20px);
+    }
+  }
+
+  @keyframes moveSection2 {
+    0% {
+      transform: translate(-20px, -20px);
+    }
+    100% {
+      transform: translate(20px, 20px);
+    }
   }
 }

@@ -1,0 +1,194 @@
+.wrapper {
+	display: flex;
+	justify-content: center;
+
+	color: #F5F1EE;
+}
+
+@media (min-width: 1050px) {
+
+  .wrapper {
+		padding: 117px 0;
+  }
+}
+
+.title {
+	position: relative;
+	width: max-content;
+
+	font-size: 26px;
+	font-weight: 600;
+	line-height: 150%;
+
+	color: #F5F1EE;
+}
+
+@media (min-width: 768px) {
+
+	.title {
+		font-size: 42px;
+	}
+}
+
+@media (min-width: 1050px) {
+
+  .title {
+		font-size: 56px;
+  }
+}
+
+.title::after {
+	content: url(../../assets/Map/logo.svg);
+	width: 35px;
+	height: 26px;
+
+	position: absolute;
+	right: -5px;
+	top: 0;
+}
+
+@media (min-width: 768px) {
+
+	.title::after {
+		width: 71px;
+		height: 53px;
+
+		right: -20px;
+		top: 5px;
+	}
+}
+
+@media (min-width: 1050px) {
+
+  .title::after {
+		width: 79px;
+		height: 58px;
+
+		right: -89px;
+		top: auto;
+		bottom: 15px;
+  }
+}
+
+.description {
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 150%;
+	letter-spacing: 0.01em;
+}
+
+@media (min-width: 768px) {
+
+	.description {
+		font-size: 20px;
+	}
+}
+
+@media (min-width: 1050px) {
+
+  .description {
+		font-size: 26px;
+  }
+}
+
+.listItem {
+
+
+	font-size: 7.79px;
+	font-weight: 600;
+	line-height: 150%;
+}
+
+@media (min-width: 768px) {
+
+	.listItem {
+		font-size: 12.87px;
+	}
+}
+
+@media (min-width: 1050px) {
+
+  .listItem {
+		font-size: 20px;
+  }
+}
+
+/*---------------------------------------------------------------------------------------------*/
+/*                                  WRAPPER CONTRE MARGIN                                            */
+/*---------------------------------------------------------------------------------------------*/
+
+.wrapper {
+  margin: 30px -10px 0;
+}
+
+@media (min-width: 480px) {
+  .wrapper {
+    margin: 30px -20px 0;
+  }
+}
+
+@media (min-width: 720px) {
+  .wrapper {
+    margin: 30px -32px 0;
+  }
+}
+
+@media (min-width: 1000px) {
+  .wrapper {
+    margin: 60px -32px 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  .wrapper {
+    margin: 60px -75px 0;
+  }
+
+}
+
+.contreWrapper {
+	max-width: 1440px;
+	width: 100%;
+
+
+	padding: 0 10px 250px;
+
+	display: flex;
+	flex-direction: column;
+
+	margin: 0 auto;
+
+	background-image: url(../../assets/Map/map.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+@media (min-width: 480px) {
+  .contreWrapper {
+    padding: 0 20px 300px;
+  }
+}
+
+@media (min-width: 550px) {
+  .contreWrapper {
+    padding: 0 20px 450px;
+  }
+}
+
+@media (min-width: 720px) {
+  .contreWrapper {
+    padding: 0 32px 600px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .contreWrapper {
+    padding: 0 32px 700px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .contreWrapper {
+    padding: 0 75px 900px;
+  }
+}
