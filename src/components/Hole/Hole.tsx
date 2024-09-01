@@ -3,6 +3,7 @@ import { Circle } from './Circle';
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import hole from '../../assets/Hole/hole.svg'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,32 +22,31 @@ const CardScrollAnimation = ({ children }: CardScrollAnimationProps) => {
         scrollTrigger: {
           trigger: containerRef.current,
           start: 'top 10% top',
-          end: '+=200%', // Увеличиваем конец анимации, чтобы дать больше времени для скролла
+          end: '+=400%',
           scrub: true,
           pin: true,
-          markers: false, // Отключаем маркеры после отладки
+          markers: false,
         }
       });
 
-      // Анимация для каждой карточки: появление с правой стороны и исчезновение
       cards.forEach((card) => {
         timeline
           .fromTo(card,
-            { scale: 0, x: 1000, opacity: 0 }, // Начальное состояние (карточка уменьшена до нуля, справа и прозрачна)
+            { scale: 0, x: '270%', opacity: 0 },
             {
-              scale: 1, x: '0%', opacity: 1, // Конечное состояние (карточка нормального размера, на месте и полностью видна)
+              scale: 1, x: '0%', opacity: 1,
               ease: 'power2.out',
-              duration: 1,
-              stagger: 0.5, // Задержка между анимациями карточек
+              duration: 10,
+              stagger: 0.5,
             }
           )
           .to(card,
             {
-              scale: 0, x: '-100%', opacity: 0, // Уменьшение, перемещение влево и исчезновение карточки
+              scale: 0, x: '-100%', opacity: 0,
               ease: 'power2.in',
               duration: 1,
             }
-          , `+=0.5`); // Небольшая задержка после появления перед исчезновением
+          , `+=0.5`);
       });
     }
   }, []);
@@ -115,7 +115,8 @@ export const Hole = () => {
             </div>
           </div>
         </div>
-      </div>
+			</div>
+			<img src={hole} alt="Изображение чёрной дыры" className={styles.hole} />
     </CardScrollAnimation>
   );
 }
