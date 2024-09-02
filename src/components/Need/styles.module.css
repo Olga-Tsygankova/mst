@@ -6,6 +6,8 @@
   margin-top: 248px;
   margin-left: auto;
   margin-right: auto;
+
+  overflow: hidden;
 }
 
 .title h2 {
@@ -103,7 +105,7 @@
   }
 
   .needWrapper {
-    max-width: 1168px;
+    max-width: 1468px;
 
     margin-top: 196px;
     padding: 0 60px;
@@ -129,7 +131,7 @@
 
 @media (min-width: 1440px) {
   .needWrapper {
-    margin-top: 107px;
+    margin-top: 50px;
 
     flex-direction: row;
   }
@@ -148,7 +150,7 @@
   .section1{
     width: 393px;
 
-    margin: 0 0 0 auto;
+    margin: 40px 0 0 5px;
 
     animation: moveSection1 5s infinite alternate;
 
@@ -159,10 +161,7 @@
 
     font-size: 70px;
 
-    position: absolute;
-    top: 40%;
-    left: -280px;
-
+    margin-top: 200px;
     width: 620px;
 
   }
@@ -176,13 +175,13 @@
       transform: translate(-20px, 20px);
     }
     100% {
-      transform: translate(20px, -20px);
+      transform: translate(0, -20px);
     }
   }
 
   @keyframes moveSection2 {
     0% {
-      transform: translate(-20px, -20px);
+      transform: translate(0, -20px);
     }
     100% {
       transform: translate(20px, 20px);

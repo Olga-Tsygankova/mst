@@ -3,8 +3,19 @@ import { Arrow } from './Arrow';
 import { ArrowLine } from './ArrowLine';
 import { Heart } from './Heart';
 import { useEffect, useRef, useState } from 'react';
+import { FormWant } from '../Forms';
 
-export const HeartSection = () => {
+type IProps = {
+  onGetQuoteClick: () => void;
+  showForm: boolean;
+  onClose: () => void;
+};
+
+export const HeartSection = ({
+  onGetQuoteClick,
+  showForm,
+  onClose,
+}: IProps) => {
   const arrowRef = useRef<HTMLDivElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [visibleBlocks, setVisibleBlocks] = useState([
@@ -15,6 +26,7 @@ export const HeartSection = () => {
     false,
   ]);
   const [isArrowVisible, setIsArrowVisible] = useState(true);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,8 +58,8 @@ export const HeartSection = () => {
           }
         });
 
-        // Check if the arrow has reached the bottom of the container
-        if (arrowRect.bottom >= containerRect.bottom) {
+        // Check if the arrow has reached 50 pixels before the bottom of the container
+        if (arrowRect.bottom >= containerRect.bottom - 50) {
           setIsArrowVisible(false); // Hide the arrow
         } else {
           setIsArrowVisible(true); // Show the arrow
@@ -64,6 +76,14 @@ export const HeartSection = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    if (showForm) {
+      setScrollPosition(window.scrollY); // Сохраняем текущую позицию скроллинга
+    } else {
+      window.scrollTo(0, scrollPosition); // Восстанавливаем сохраненную позицию скроллинга
+    }
+  }, [showForm, scrollPosition]);
 
   return (
     <div className={styles.wrapper}>
@@ -117,7 +137,16 @@ export const HeartSection = () => {
       </div>
       <div className={styles.heart}>
         <Heart />
-        <div className={styles.btn}>Хочу к вам</div>
+        <div
+          className={styles.btn}
+          onClick={(e) => {
+            e.preventDefault();
+            onGetQuoteClick();
+          }}
+        >
+          Хочу к вам
+        </div>
+        {showForm && <FormWant onClose={onClose} />}
       </div>
     </div>
   );

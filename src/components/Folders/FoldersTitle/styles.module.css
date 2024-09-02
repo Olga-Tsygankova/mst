@@ -1,5 +1,5 @@
 .foldersTitle h2 {
-	margin-top: 150px;
+	margin-top: 0px;
 	margin-bottom: 89px;
 
 	font-size: 24px;
@@ -54,7 +54,7 @@
 	.foldersTitle h2 {
 		font-size: 48px;
 
-		margin-top: 243px;
+		margin-top: 0px;
 		margin-bottom: 142px;
 	}
 }
@@ -62,7 +62,7 @@
 @media (min-width: 1440px) {
 	.foldersTitle {
 		text-align: center;
-		margin: 51px auto 100px;
+		margin: 0px auto 100px;
 
 		max-width: 830px;
 	}

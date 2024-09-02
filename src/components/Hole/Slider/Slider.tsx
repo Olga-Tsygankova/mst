@@ -1,5 +1,5 @@
 import styles from './styles.module.css';
-import { Circle } from './Circle';
+import { Circle } from '../Circle';
 
 export const Slider = () => {
 	return (
