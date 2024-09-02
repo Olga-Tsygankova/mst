@@ -3,7 +3,8 @@
 .byblikMobile {
   display: none;
   position: relative;
-  /*z-index: 1;*/
+  z-index: 1;
+  margin-bottom: 350px;
 }
 
 .spline-watermark {
@@ -15,6 +16,7 @@
     display: flex;
     height: 340px;
     width: 340px;
+    top: -100px;
     /* top: 50px;
     left: auto;
     right: -50px; */
@@ -29,6 +31,9 @@
   .byblikPlanshet {
     display: flex;
     height: 512px;
+    top: -350px;
+    margin-bottom: 300px;
+    top: 0;
   }
 
   .byblikPlanshet > div {
@@ -48,6 +53,7 @@
   }
 
   .byblikDesktop {
+    margin-bottom: 0;
     height: 600px;
     display: flex;
     top: -300px;
