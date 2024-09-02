@@ -24,11 +24,10 @@ const CardScrollAnimation = ({ children }: CardScrollAnimationProps) => {
       const timeline = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: 'top 10% top',
+          start: 'top 70% top',
           end: '+=400%',
           scrub: true,
           pin: true,
-          markers: false,
         }
       });
 
@@ -76,7 +75,6 @@ export const Tube: React.FC = () => {
             start: 'top center',
             end: 'bottom center',
             scrub: true,
-            markers: true, // Удалите или оставьте для отладки
           }
         }).to(ballRef.current, {
           motionPath: {
