@@ -1,5 +1,6 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { gsap } from 'gsap';
+import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './style.module.css';
 
@@ -13,7 +14,7 @@ export const About = () => {
     const leftBubl = useRef(null);
     const rightBubl = useRef(null);
     const centerBall = useRef(null);
-    useEffect(() => {
+    useGSAP(() => {
         const cont = about.current;
         const leftContain = leftCont.current;
         const rightContain = rightCont.current;

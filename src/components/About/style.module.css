@@ -13,7 +13,6 @@
     min-height: 170px;
 }
 
-
 .left__first,
 .left__second,
 .right__first,
@@ -77,6 +76,8 @@
 @media (min-width: 1440px) {
     .about {
         min-height: 390px;
+        top: -800px;
+        margin-bottom: -350px;
     }
 
     .left__first,
