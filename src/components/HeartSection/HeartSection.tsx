@@ -8,13 +8,13 @@ import { FormWant } from '../Forms';
 type IProps = {
   onGetQuoteClick: () => void;
   showForm: boolean;
-  handleCloseForm: () => void;
+  onClose: () => void;
 };
 
 export const HeartSection = ({
   onGetQuoteClick,
   showForm,
-  handleCloseForm,
+  onClose,
 }: IProps) => {
   const arrowRef = useRef<HTMLDivElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -26,6 +26,7 @@ export const HeartSection = ({
     false,
   ]);
   const [isArrowVisible, setIsArrowVisible] = useState(true);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -75,6 +76,14 @@ export const HeartSection = ({
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    if (showForm) {
+      setScrollPosition(window.scrollY); // Сохраняем текущую позицию скроллинга
+    } else {
+      window.scrollTo(0, scrollPosition); // Восстанавливаем сохраненную позицию скроллинга
+    }
+  }, [showForm, scrollPosition]);
 
   return (
     <div className={styles.wrapper}>
@@ -137,7 +146,7 @@ export const HeartSection = ({
         >
           Хочу к вам
         </div>
-        {showForm && <FormWant onClose={handleCloseForm} />}
+        {showForm && <FormWant onClose={onClose} />}
       </div>
     </div>
   );

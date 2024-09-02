@@ -10,13 +10,15 @@ import { Hole } from '../../components/Hole';
 import { Map } from '../../components/Map';
 import { Folders } from '../../components/Folders';
 import { FormKP } from '../../components/Forms';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Footer } from '../../components/Footer';
 
 export const MainPage = () => {
   const [showFormKP, setShowFormKP] = useState(false);
   const [showFormCase, setShowFormCase] = useState(false);
   const [showFormWant, setShowFormWant] = useState(false);
+  const [renderKey, setRenderKey] = useState(0);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   const handleGetQuoteClickKP = () => {
     console.log('Кнопка нажата, показываем форму'); // Проверка нажатия кнопки
@@ -24,6 +26,7 @@ export const MainPage = () => {
   };
   const handleCloseFormKP = () => {
     setShowFormKP(false);
+    setRenderKey(renderKey + 1); // Изменяем ключ для перерендеринга
   };
 
   const handleGetQuoteClickCase = () => {
@@ -32,22 +35,32 @@ export const MainPage = () => {
   };
   const handleCloseFormCase = () => {
     setShowFormCase(false);
+    setRenderKey(renderKey + 1); // Изменяем ключ для перерендеринга
   };
 
   const handleGetQuoteClickWant = () => {
     console.log('Кнопка нажата, показываем форму'); // Проверка нажатия кнопки
+    setScrollPosition(window.scrollY); // Сохраняем текущую позицию скроллинга
     setShowFormWant(true);
   };
   const handleCloseFormWant = () => {
     setShowFormWant(false);
+    window.scrollTo(0, scrollPosition); // Восстанавливаем сохраненную позицию скроллинга
+    setRenderKey(renderKey + 1); // Изменяем ключ для перерендеринга
   };
 
+  useEffect(() => {
+    if (renderKey > 0) {
+      window.scrollTo(0, scrollPosition); // Восстанавливаем сохраненную позицию скроллинга после перерендеринга
+    }
+  }, [renderKey, scrollPosition]);
+
   return (
-    <div className={styles.mainPageWrapper}>
+    <div key={renderKey} className={styles.mainPageWrapper}>
       <Intro
         onGetQuoteClick={handleGetQuoteClickCase}
         showFormCase={showFormCase}
-        handleCloseForm={handleCloseFormCase}
+        onClose={handleCloseFormCase}
       />
       <About />
       <Advantages />
@@ -61,7 +74,7 @@ export const MainPage = () => {
       <HeartSection
         onGetQuoteClick={handleGetQuoteClickWant}
         showForm={showFormWant}
-        handleCloseForm={handleCloseFormWant}
+        onClose={handleCloseFormWant}
       />
       <Footer/>
     </div>
