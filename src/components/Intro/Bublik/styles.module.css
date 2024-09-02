@@ -31,14 +31,19 @@
   .byblikPlanshet {
     display: flex;
     height: 512px;
-    top: -350px;
     margin-bottom: 300px;
-    top: 0;
+    top: -100px;
   }
 
   .byblikPlanshet > div {
     display: flex;
     justify-content: flex-end;
+  }
+}
+
+@media (min-width: 900px) {
+  .byblikPlanshet {
+    top: -300px;
   }
 }
 
