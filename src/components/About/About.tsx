@@ -32,23 +32,24 @@ export const About = () => {
         .fromTo(
             [leftContain, rightContain],
             {
-                x: (i) => i === 0 ? -170 : 170
+                x: (i) => i === 0 ? -210 : 210
             },
             {
                 x: (i) => i === 0 ? 0 : 0,
                 duration: 1,
-                opacity: 0
+                opacity: 0,
+                zIndex: 2
             }
         )
         .fromTo(
             [leftBubble, rightBubble],
             {
-                x: (i) => i === 0 ? -510 : 510
+                x: (i) => i === 0 ? -615 : 615
             },
             {
                 x: (i) => i === 0 ? 0 : 0,
                 duration: 2,
-                zIndex: 1
+                zIndex: 3
             }
         )
         .fromTo(center,
@@ -57,7 +58,7 @@ export const About = () => {
         },
         {
             opacity: 1,
-            zIndex: 2,
+            zIndex: 4,
         })
 
     });
