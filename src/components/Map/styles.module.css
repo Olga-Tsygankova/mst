@@ -5,6 +5,11 @@
 	color: #F5F1EE;
 }
 
+.titleWrapper{
+	position: relative;
+	top: -50px;
+}
+
 @media (min-width: 1050px) {
 
   .wrapper {
@@ -22,11 +27,24 @@
 
 	color: #F5F1EE;
 }
+@media (min-width: 480px) {
+
+	.title {
+		font-size: 30px;
+	}
+	.titleWrapper{
+		margin-left: 20px;
+	}
+
+}
 
 @media (min-width: 768px) {
 
 	.title {
 		font-size: 42px;
+	}
+	.titleWrapper{
+		position: static;
 	}
 }
 
@@ -64,15 +82,15 @@
 		width: 79px;
 		height: 58px;
 
-		right: -89px;
-		top: auto;
+		right: -10px;
+		/*top: auto;*/
 		bottom: 15px;
   }
 }
 
 .description {
 	font-size: 14px;
-	font-weight: 600;
+	font-weight: 400;
 	line-height: 150%;
 	letter-spacing: 0.01em;
 }
@@ -158,21 +176,64 @@
 
 	margin: 0 auto;
 
-	background-image: url(../../assets/Map/map.svg);
-	background-size: contain;
+	background-image: url(../../assets/svg/countries.svg);
+	background-size: cover;
 	background-repeat: no-repeat;
+	background-position: center;
 }
 
-@media (min-width: 480px) {
+
+@media (min-width: 400px) {
   .contreWrapper {
     padding: 0 20px 300px;
   }
 }
+@media (min-width: 460px) {
+	.contreWrapper {
+		padding: 0 20px 350px;
+	}
+}
 
-@media (min-width: 550px) {
+@media (min-width: 479px) {
+	.contreWrapper {
+		padding: 0 20px 400px;
+	}
+}
+
+@media (min-width: 533px) {
   .contreWrapper {
     padding: 0 20px 450px;
   }
+}
+@media (min-width: 591px) {
+	.contreWrapper {
+		padding: 0 20px 470px;
+	}
+}
+@media (min-width: 614px) {
+	.contreWrapper {
+		padding: 0 20px 490px;
+	}
+}
+@media (min-width: 637px) {
+	.contreWrapper {
+		padding: 0 20px 510px;
+	}
+}
+@media (min-width: 660px) {
+	.contreWrapper {
+		padding: 0 20px 530px;
+	}
+}
+@media (min-width: 683px) {
+	.contreWrapper {
+		padding: 0 20px 550px;
+	}
+}
+@media (min-width: 706px) {
+	.contreWrapper {
+		padding: 0 20px 600px;
+	}
 }
 
 @media (min-width: 720px) {
@@ -180,6 +241,50 @@
     padding: 0 32px 600px;
   }
 }
+
+@media (min-width: 739px) {
+	.contreWrapper {
+		padding: 0 20px 620px;
+	}
+}
+@media (min-width: 762px) {
+	.contreWrapper {
+		padding: 0 20px 640px;
+	}
+}
+@media (min-width: 851px) {
+	.contreWrapper {
+		padding: 0 20px 660px;
+	}
+}
+@media (min-width: 873px) {
+	.contreWrapper {
+		padding: 0 20px 680px;
+	}
+}
+@media (min-width: 896px) {
+	.contreWrapper {
+		padding: 0 20px 700px;
+	}
+}
+@media (min-width: 920px) {
+	.contreWrapper {
+		padding: 0 20px 720px;
+	}
+}
+@media (min-width: 943px) {
+	.contreWrapper {
+		padding: 0 20px 740px;
+	}
+}
+@media (min-width: 966px) {
+	.contreWrapper {
+		padding: 0 20px 760px;
+	}
+}
+
+
+
 
 @media (min-width: 1000px) {
   .contreWrapper {
