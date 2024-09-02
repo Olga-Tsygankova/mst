@@ -1,6 +1,7 @@
 .container {
   background-color: #F5F1EE;
 
+
   padding: 10px;
 
   max-width: 850px;
@@ -8,11 +9,13 @@
   margin-left: auto;
   margin-right: auto;
 
-  position: relative;
+  position: absolute;
 
   top: -450px;
 
   z-index: 100;
+
+  border-radius: 20px;
 }
 
 .containerCase {
@@ -25,9 +28,13 @@
   margin-left: auto;
   margin-right: auto;
 
-  position: absolute;
+  position: fixed;
+
 
   z-index: 100;
+
+  border-radius: 20px;
+
 }
 
 .formWrapper {
@@ -63,16 +70,19 @@
 .formText {
   margin-bottom: 20px;
 }
-.formTextWant h2{
+
+.formTextWant h2 {
   font-size: 25px;
 
   margin-bottom: 10px;
 }
-.spanWant{
+
+.spanWant {
   font-size: 20px;
   font-weight: 600;
-  margin-bottom:14px ;
+  margin-bottom: 14px;
 }
+
 
 .formText h2 {
   font-size: 25px;
@@ -89,6 +99,7 @@
 .formInput {
   display: flex;
   flex-direction: column;
+  gap: 4px;
 
   font-weight: 600;
   font-size: 14px;
@@ -101,6 +112,7 @@
   border-radius: 50px;
 
   padding: 11px 20px;
+  height: 45px;
 }
 
 .formButton {
@@ -148,7 +160,7 @@
 /*---------------------------------------------------------------------------------------------*/
 
 @media (min-width: 480px) {
-  .formText, .form, .private,.formTextWant {
+  .formText, .form, .private, .formTextWant {
     margin: 0 10px 10px;
   }
 
@@ -185,7 +197,12 @@
 @media (min-width: 768px) {
   .container {
     top: -800px;
+    border-radius: 30px;
   }
+  .containerCase{
+    border-radius: 30px;
+  }
+
 }
 
 @media (min-width: 1000px) {
@@ -202,10 +219,12 @@
     display: inline-block;
     width: 386px;
   }
-  .formTextWant h2{
+
+  .formTextWant h2 {
     position: absolute;
   }
-  .spanWant{
+
+  .spanWant {
     margin-top: 80px;
   }
 
