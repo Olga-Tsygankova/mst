@@ -45,7 +45,6 @@
 .folderImg > svg {
 	max-width: 189px;
 	max-height: 130px;
-	filter: blur(1px);
 }
 
 .folder > div > p {
