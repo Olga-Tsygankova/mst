@@ -1,6 +1,6 @@
 .about {
     position: relative;
-    top: -500px;
+    top: -200px;
 
     max-width: 1440px;
     margin: 0 auto;
@@ -8,7 +8,6 @@
     display: flex;
     justify-content: center;
     gap: 32px;
-    overflow: hidden;
 
     min-width: 170px;
     min-height: 170px;
@@ -83,7 +82,8 @@
     .left__first,
     .left__second,
     .right__first,
-    .right__second {
+    .right__second,
+    .centerBall {
         min-width: 390px;
         min-height: 390px;
     }
