@@ -1,10 +1,18 @@
 import styles from './styles.module.css';
-import bublik from '../../../assets/Intro/bublik.svg';
+import Spline from '@splinetool/react-spline';
 
 export const Bublik = () => {
   return (
-    <div className={styles.byblik}>
-      <img src={bublik} alt='' />
+    <div>
+      <div className={styles.byblikDesktop}>
+        <Spline scene="https://prod.spline.design/QK3C0oU3M0LilzdT/scene.splinecode" /> {/*Десктоп*/}
+      </div>
+      <div className={styles.byblikPlanshet}>
+        <Spline scene="https://prod.spline.design/pjAWbEPDQU1mQoUN/scene.splinecode" /> {/*Планшет*/}
+      </div>
+      <div className={styles.byblikMobile}>
+        <Spline scene="https://prod.spline.design/ZniqoNkTYKfeDUBK/scene.splinecode" /> {/*Планшет*/}
+      </div>
     </div>
   );
 };
