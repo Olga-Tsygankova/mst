@@ -58,8 +58,8 @@ export const HeartSection = ({
           }
         });
 
-        // Check if the arrow has reached the bottom of the container
-        if (arrowRect.bottom >= containerRect.bottom) {
+        // Check if the arrow has reached 50 pixels before the bottom of the container
+        if (arrowRect.bottom >= containerRect.bottom - 50) {
           setIsArrowVisible(false); // Hide the arrow
         } else {
           setIsArrowVisible(true); // Show the arrow
