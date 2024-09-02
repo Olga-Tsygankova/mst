@@ -8,20 +8,16 @@ import { FormCase } from '../Forms';
 type IProps = {
   onGetQuoteClick: () => void;
   showFormCase: boolean;
-  handleCloseForm: () => void;
+  onClose: () => void;
 };
 
-export const Intro = ({
-  onGetQuoteClick,
-  showFormCase,
-  handleCloseForm
-}: IProps) => {
+export const Intro = ({ onGetQuoteClick, showFormCase, onClose }: IProps) => {
   return (
     <section className={styles.intro}>
       <Header />
       <GradientScroll />
       <IntroTitle onGetQuoteClick={onGetQuoteClick} />
-      {showFormCase && <FormCase onClose={handleCloseForm} />}
+      {showFormCase && <FormCase onClose={onClose} />}
       <Bublik />
     </section>
   );
