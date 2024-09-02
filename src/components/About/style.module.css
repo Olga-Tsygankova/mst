@@ -11,8 +11,8 @@
 
     min-width: 170px;
     min-height: 170px;
-}
 
+}
 
 .left__first,
 .left__second,
@@ -77,6 +77,8 @@
 @media (min-width: 1440px) {
     .about {
         min-height: 390px;
+        top: -800px;
+        margin-bottom: -350px;
     }
 
     .left__first,
