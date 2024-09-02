@@ -3,7 +3,7 @@ import { IntroTitle } from './IntroTitle';
 import { Header } from './Header';
 import { Bublik } from './Bublik';
 import { GradientScroll } from './GradientScroll';
-import { FormCase } from '../Forms/FormCase.tsx';
+import { FormCase } from '../Forms';
 
 type IProps = {
   onGetQuoteClick: () => void;
