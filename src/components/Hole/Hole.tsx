@@ -3,9 +3,9 @@ import { Circle } from './Circle';
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import hole from '../../assets/Hole/hole.svg'
+import hole from '../../assets/Hole/hole.svg';
 import pipe from '../../assets/Tube/pipe.svg';
-import gradient from '../../assets/Tube/gradient.svg'
+import gradient from '../../assets/Tube/gradient.svg';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
