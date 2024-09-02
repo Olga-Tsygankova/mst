@@ -60,12 +60,6 @@
   margin-left: auto;
 }
 
-
-.close:after {
-  content: url("./../../assets/svg/Vector 140.svg");
-
-}
-
 .formText {
   margin-bottom: 20px;
 }

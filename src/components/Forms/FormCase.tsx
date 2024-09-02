@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './styles.module.css';
 import emailjs from 'emailjs-com';
+import X from '../../assets/svg/X.svg'
 
 interface FormData {
   name: string;
@@ -65,7 +66,9 @@ export const FormCase = ({ onClose }: IProps) => {
   return (
     <div className={styles.containerCase}>
       <div className={styles.wrapperClose}>
-        <button className={styles.close} onClick={onClose} />
+        <button className={styles.close} onClick={onClose}>
+          <img alt='' src={X}/>
+        </button>
       </div>
       <div className={styles.formWrapper}>
         {isFormSubmitted ? (

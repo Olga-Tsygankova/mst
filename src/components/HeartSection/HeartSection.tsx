@@ -3,7 +3,7 @@ import { Arrow } from './Arrow';
 import { ArrowLine } from './ArrowLine';
 import { Heart } from './Heart';
 import { useEffect, useRef, useState } from 'react';
-import { FormWant } from '../Forms/FormWant.tsx';
+import { FormWant } from '../Forms';
 
 type IProps = {
   onGetQuoteClick: () => void;
