@@ -87,6 +87,13 @@ export const Tube: React.FC = () => {
           },
           duration: 1,
           ease: 'none'
+        }).to(ballRef.current, {
+          x: 500,
+          y: 100,// Перемещение за правый край экрана
+          scale: 50, // Увеличение размера
+          rotate: 180,
+          duration: 1, // Длительность финальной анимации
+          ease: 'power2.inOut'
         });
       }
     }
@@ -113,64 +120,66 @@ export const Tube: React.FC = () => {
 
 export const Hole = () => {
   return (
-    <CardScrollAnimation>
-      <Tube />
-      <h2 className={styles.title}>Комплексно подходим к&nbsp;решению маркетинговых задач бизнеса</h2>
-      <div className={styles.slider}>
-        <div className={styles.cardWrapper}>
-          <div className={styles.card}>
-            <div className={styles.cardIcon}>
-              <Circle />
+    <div className={styles.breaker}>
+      <CardScrollAnimation>
+        <Tube />
+        <h2 className={styles.title}>Комплексно подходим к&nbsp;решению маркетинговых задач бизнеса</h2>
+        <div className={styles.slider}>
+          <div className={styles.cardWrapper}>
+            <div className={styles.card}>
+              <div className={styles.cardIcon}>
+                <Circle />
+              </div>
+              <h3 className={styles.cardTitle}>Создаем сайты</h3>
+              <div className={styles.cardContent}>
+                <ul className={styles.cardList}>
+                  <li className={styles.cardItem}>Landing Page</li>
+                  <li className={styles.cardItem}>Многостраничный сайт</li>
+                  <li className={styles.cardItem}>Квиз</li>
+                  <li className={styles.cardItem}>Сайт-визитка</li>
+                  <li className={styles.cardItem}>Интернет-магазин</li>
+                  <li className={styles.cardItem}>Блог</li>
+                </ul>
+              </div>
             </div>
-            <h3 className={styles.cardTitle}>Создаем сайты</h3>
-            <div className={styles.cardContent}>
-              <ul className={styles.cardList}>
-                <li className={styles.cardItem}>Landing Page</li>
-                <li className={styles.cardItem}>Многостраничный сайт</li>
-                <li className={styles.cardItem}>Квиз</li>
-                <li className={styles.cardItem}>Сайт-визитка</li>
-                <li className={styles.cardItem}>Интернет-магазин</li>
-                <li className={styles.cardItem}>Блог</li>
-              </ul>
+            <div className={`${styles.card} ${styles.cardFirst}`}>
+              <div className={styles.cardIcon}>
+                <Circle />
+              </div>
+              <h3 className={styles.cardTitle}>Приводим лидов –<br />горячих клиентов</h3>
+              <div className={styles.cardContent}>
+                <p className={styles.cardDescription}>Подбираем и фильтруем лидов по конкретным критериям бизнеса, обеспечивая качественные заявки.</p>
+              </div>
             </div>
-          </div>
-          <div className={`${styles.card} ${styles.cardFirst}`}>
-            <div className={styles.cardIcon}>
-              <Circle />
+            <div className={styles.card}>
+              <div className={styles.cardIcon}>
+                <Circle />
+              </div>
+              <h3 className={styles.cardTitle}>Настраиваем и ведем<br />рекламные кампании</h3>
+              <div className={styles.cardContent}>
+                <ul className={styles.cardList}>
+                  <li className={styles.cardItem}>Яндекс Директ</li>
+                  <li className={styles.cardItem}>Google Реклама</li>
+                </ul>
+              </div>
             </div>
-            <h3 className={styles.cardTitle}>Приводим лидов –<br />горячих клиентов</h3>
-            <div className={styles.cardContent}>
-              <p className={styles.cardDescription}>Подбираем и фильтруем лидов по конкретным критериям бизнеса, обеспечивая качественные заявки.</p>
-            </div>
-          </div>
-          <div className={styles.card}>
-            <div className={styles.cardIcon}>
-              <Circle />
-            </div>
-            <h3 className={styles.cardTitle}>Настраиваем и ведем<br />рекламные кампании</h3>
-            <div className={styles.cardContent}>
-              <ul className={styles.cardList}>
-                <li className={styles.cardItem}>Яндекс Директ</li>
-                <li className={styles.cardItem}>Google Реклама</li>
-              </ul>
-            </div>
-          </div>
-          <div className={styles.card}>
-            <div className={styles.cardIcon}>
-              <Circle />
-            </div>
-            <h3 className={styles.cardTitle}>Запускаем<br />и ведем SMM</h3>
-            <div className={styles.cardContent}>
-              <ul className={styles.cardList}>
-                <li className={styles.cardItem}>YouTube</li>
-                <li className={styles.cardItem}>Telegram</li>
-                <li className={styles.cardItem}>ВКонтакте</li>
-              </ul>
+            <div className={styles.card}>
+              <div className={styles.cardIcon}>
+                <Circle />
+              </div>
+              <h3 className={styles.cardTitle}>Запускаем<br />и ведем SMM</h3>
+              <div className={styles.cardContent}>
+                <ul className={styles.cardList}>
+                  <li className={styles.cardItem}>YouTube</li>
+                  <li className={styles.cardItem}>Telegram</li>
+                  <li className={styles.cardItem}>ВКонтакте</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-			</div>
-			<img src={hole} alt="Изображение чёрной дыры" className={styles.hole} />
-    </CardScrollAnimation>
+        <img src={hole} alt="Изображение чёрной дыры" className={styles.hole} />
+      </CardScrollAnimation>
+    </div>
   );
 }

@@ -1,3 +1,9 @@
+.breaker {
+	margin: 0 -75px;
+
+	overflow-x: hidden;
+}
+
 .wrapper {
 	width: 100%;
 
@@ -11,8 +17,6 @@
 	height: 200vh;
 
 	margin: -200px 0 30px auto;
-
-	overflow: hidden;
 }
 
 @media (min-width: 1400px) {
@@ -197,7 +201,7 @@
 @media (min-width: 1000px) {
 
 	.hole {
-		top: 15%;
+		top: 30%;
 		right: -75px;
 		left: -75px;
 
@@ -240,11 +244,14 @@
   position: absolute;
   width: 60px;
   height: 60px;
-  /* Уберите фон и форму, если заменяете на иконку */
+
   transform: translateX(-50%);
   display: flex;
   justify-content: center;
   align-items: center;
+
+	left: 5%;
+  top: 40px;
 }
 
 .ball img {
