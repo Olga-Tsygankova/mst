@@ -37,7 +37,6 @@ export const About = () => {
             },
             {
                 x: (i) => i === 0 ? 0 : 0,
-                duration: 1,
                 opacity: 0,
                 zIndex: 2
             }
@@ -49,7 +48,6 @@ export const About = () => {
             },
             {
                 x: (i) => i === 0 ? 0 : 0,
-                duration: 2,
                 zIndex: 3
             }
         )
